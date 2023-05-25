@@ -8,7 +8,7 @@ I am confident that these projects will showcase my skills as a frontend develop
 
 The following is a list of the projects that are included in this repository:
     
-    `Weather App` - An application that displays the current weather       conditions for a given location.
+    ~Weather App~ - An application that displays the current weather       conditions for a given location.
 
 
 
