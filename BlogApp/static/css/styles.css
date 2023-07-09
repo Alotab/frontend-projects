@@ -683,7 +683,9 @@
   .main-detail-post{
     display: flex;
     gap: 5rem;
-    padding: 2.5rem 1rem;
+    padding-top: 10rem;
+    padding: 6rem 1rem 2.5rem 1rem;
+    /* padding-top: 17rem; */
     width: 100%;
   }
   
