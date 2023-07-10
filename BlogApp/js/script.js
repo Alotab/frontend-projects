@@ -16,10 +16,14 @@ const elSearchMenu = document.querySelector('.middle-colume-search')
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 const chatbox = document.querySelector(".chatbox");
+const chatBotToggler = document.querySelector(".chatbot-toggler");
+const chatbotCloseBtn = document.querySelector(".close-btn");
+
 
 
 let userMessenger;
 let API_KEY = "";
+const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
     // create a chat <li> element with passed message and className
@@ -27,8 +31,7 @@ const createChatLi = (message, className) => {
     chatLi.classList.add("chat", className);
 
     let chatContent = className === "outgoing" ? `<p></p><span class="material-symbols-outlined">
-    <img src="images/user.png" alt="">
-</span>` : ` <span class="material-symbols-outlined">
+    <img src="images/user.png" alt=""></span>` : ` <span class="material-symbols-outlined">
     <img src="images/chatbot.png" alt=""></span><p></p>`;
     chatLi.innerHTML = chatContent;
     chatLi.querySelector("p").textContent = message;
@@ -36,8 +39,8 @@ const createChatLi = (message, className) => {
 }
 
 const generateResponse = (incomingChatLi) => {
-    const API_URL = "https://api.openai.com/v1/chat/completions"
-    const messageElement = incomingChatLi.querySelector("p")
+    const API_URL = "https://api.openai.com/v1/chat/completions";
+    const messageElement = incomingChatLi.querySelector("p");
 
     const requestOptions = {
         method :"POST",
@@ -56,16 +59,21 @@ const generateResponse = (incomingChatLi) => {
         messageElement.textContent = data.choices[0].message.content;
     }).catch((error) => {
         // console.log(error);
-        messageElement.textContent = "Oops! Something went wrong. Please try again."
+
+       
+        messageElement.classList.add("error");   //add to style the error
+        messageElement.textContent = "Oops! Something went wrong. Please try again.";
     }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 }
-    
-   
 
-sendChatBtn.addEventListener('click', ()=> {
-    userMessenger = chatInput.value.trim()
+
+const handleChat = () =>  {
+    userMessenger = chatInput.value.trim();
     if(!userMessenger) return;
     chatInput.value = "";
+
+    //reset the textarea height to its default height once a message is sent
+    chatInput.style.height = `${chatInput.scrollHeight}px`;
 
 
     // append user's message to the chatbox
@@ -76,14 +84,33 @@ sendChatBtn.addEventListener('click', ()=> {
     setTimeout(() => {
         // chatbox.appendChild(createChatLi("...", "incoming"));
 
-        const incomingChatLi = createChatLi("...", "incoming")
+        const incomingChatLi = createChatLi("...", "incoming");
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
         generateResponse(incomingChatLi);
     }, 600);
-    
+};
 
-})
+
+// adjust the height of the input textarea based on it's content
+chatInput.addEventListener("input", () => {
+    chatInput.style.height = `${inputInitHeight}px`;
+    chatInput.style.height = `${chatInput.scrollHeight}px`;
+});
+
+
+
+// if Enter key is press without shift key and the window with is greater than 800px, handle the chat
+chatInput.addEventListener("keydown", (e) => {
+    if(e.key === 'Enter' && !e.shiftkey && window.innerWidth > 800) {
+        e.preventDefault();
+        handleChat();
+    }
+});
+
+sendChatBtn.addEventListener("click", handleChat);
+chatbotCloseBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+chatBotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
 
 
@@ -91,7 +118,7 @@ sendChatBtn.addEventListener('click', ()=> {
 function disableScroll() {
     // Get the current page scroll position
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
   
         // if any scroll is attempted, set this to the previous value
         window.onscroll = function() {
@@ -110,7 +137,7 @@ function enableScroll() {
 
 if(elSearcIcon){
     elSearcIcon.addEventListener('click', ()=>{
-        elSearchMenu.classList.add('middle-search')
+        elSearchMenu.classList.add('middle-search');
     })
 }
 
