@@ -1,0 +1,45 @@
+.subscription {
+    background-color: var(--main-accent);
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.subscription-icon i {
+    margin-right: 15px;
+    margin-top: 13px;
+}
+
+.subscription-text h3 {
+    text-transform: uppercase;
+    font-size: 23px;
+    font-weight: 700;
+    padding-top: 7px;
+}
+
+.subscription-text p {
+    font-style: italic;
+}
+
+/* Form */
+.form-control-lg {
+    border-radius: 0;
+}
+
+.input-group > .input-group-append > .btn {
+    margin-left: -100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 0;
+}
+
+.sub-btn {
+    background-color: var(--main-accent);
+    color: #ffffff;
+    border: none;
+    
+}
+
+.subscription-form input::placeholder {
+    font-size: 15px;
+    font-style: italic;
+}

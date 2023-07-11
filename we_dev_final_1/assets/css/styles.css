@@ -1,0 +1,56 @@
+@import "partials/bootstrap.min.css";
+@import "partials/owl.carousel.min.css";
+@import "partials/owl.theme.default.min.css";
+@import "partials/header.css";
+@import "partials/hero.css";
+@import "partials/trailers.css";
+@import "partials/dvd.css";
+@import "partials/sidebar.css";
+@import "partials/subscribe.css";
+@import "partials/reviews.css";
+@import "partials/footer.css";
+@import "partials/responsive.css";
+@import "partials/feature.css";
+@import "partials/article.css";
+@import "partials/entertainment.css";
+@import "partials/podcast.css";
+@import "partials/report.css";
+
+@font-face {
+    src:url(assets/fonts/ChronicleTextG1Roman.otf);
+    font-family: roman-g1;
+}
+
+@font-face {
+    src:url(assets/fonts/FontsFree-Net-Replica-Bold.ttf);
+    font-family: replica-gold;
+}
+
+@font-face {
+    src:url(assets/fonts/Minion-Pro-Regular.ttf);
+    font-family: minion pro;
+}
+
+@font-face {
+    font-family: bebas-neue;
+    src: url(assets/fonts/BebasNeue-Regular.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+
+
+
+/* Global styles */
+:root {
+    --main-accent: #f2552c;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(243, 235, 235);
+}
+

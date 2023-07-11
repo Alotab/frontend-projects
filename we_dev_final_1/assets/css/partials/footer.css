@@ -1,0 +1,104 @@
+.footer {
+    background-image: linear-gradient(to right, rgba(51,51,51, .92), rgba(58,58,58, .85)), url('../../img/footer/footer-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-top: 25px;
+    padding-bottom: 0px;
+}
+
+.widget-container {
+    padding-bottom: 25px;
+}
+
+.footer .widget-container .about {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer .widget-container .about p {
+    font-family: 'Lobster Two', cursive;
+    font-size: 18px;
+    padding-top: 15px;
+    color: #ffffff
+}
+
+/*  Second Widget */
+.footer-widget-content h3 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+
+
+.footer-widget-content hr {
+    border: 1px solid #f2552c;
+    width: 25%;
+    margin-left: 0;
+}
+
+.footer-news-title {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.footer-news-title a {
+    text-decoration: none;
+}
+
+.footer-news-date {
+    font-size: 13px;
+    font-style: italic;
+    color: #ffffff;
+}
+
+/* Carousel */
+
+.twitter-profile-img {
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.carousel-inner {
+    margin-top: -25px;
+}
+
+.carousel-caption h5 {
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 10px ;
+}
+
+.carousel-caption h5 span {
+    color: var(--main-accent);
+}
+
+.carousel-caption p {
+    font-size: 13px;
+}
+
+.carousel-caption p a {
+    color: var(--main-accent);
+}
+
+/* Copyright */
+.copyright-section {
+    background-color: #333333;
+    color: #cccccc;
+    padding-top: 20px;
+    font-size: 13px;
+}
+
+.copyright-section .payment-methods ul {
+    list-style: none;
+}
+
+.copyright-section .payment-methods ul li {
+    display: inline-flex;
+}

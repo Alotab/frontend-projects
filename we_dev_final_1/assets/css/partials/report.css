@@ -1,0 +1,46 @@
+/* Report Main Content*/
+
+.report-content .box{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.report-content .report-container .box{
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem #000;
+    overflow: hidden;
+    margin: 2rem;
+    
+}
+
+.report-content .report-container .box p{
+    margin-left: 5px;
+}
+
+.report-container.box{
+    height: 30rem;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 .5rem 1rem #000;
+    overflow: hidden;
+}
+
+/* Appendices */
+.report-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.report-container .box .image .responsive-wireframe{
+    text-align: center;
+    color: blue;
+}

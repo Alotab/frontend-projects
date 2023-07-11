@@ -1,0 +1,183 @@
+
+/* Article Header content */
+
+.article-header h3 {
+    font-size: 2em;
+    display: block;
+    text-align:center;
+    line-height: 40px;
+    font-family: replica-gold;
+    font-weight: 700;
+}
+
+.article-header p {
+    font-family: roman-g1, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.125em;
+    line-height: 28px;
+    text-align: center;
+    font-weight: 500;
+    text-transform: none;
+    padding-bottom: 10px;
+}
+
+.article-header .share {
+    margin-top: 30px;
+    font-weight: 300;
+    color: black;
+
+}
+
+.article-header .article-share {
+    padding-bottom: 1em;
+    display: flex;
+   
+}
+
+.article-share {
+    position: relative;
+    top: -20px;
+    border-bottom: 2px solid rgb(180, 170, 170);
+}
+
+.article-share ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.article-share li {
+    display: inline-block;
+    font-size: 1.5em;
+    
+}
+
+.article-share ul li a {
+    color: rgba(77, 72, 72, 0.329);
+    margin-right: 11px;
+}
+
+.article-share ul li a:hover {
+    color: var(--main-accent);
+}
+
+.article-share-icon {
+    position: relative;
+    top: -20px;
+}
+.article-share-icon li{
+    display: inline-block;
+    font-size: 1.5em;
+}
+
+.article-share-icon ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.article-share-icon ul li a {
+    color: rgba(77, 72, 72, 0.329);
+    margin-right: 11px;
+}
+
+.article-share-icon ul li a:hover {
+    color: var(--main-accent);
+}
+
+
+/* Main Article  content */
+
+.main-article-header p{
+    font-size: 1em;
+    text-align:left;
+    font-family: replica-gold;
+    font-weight: 700;
+
+}
+
+.main-article-header .word {
+    margin-bottom: 0px;
+   
+}
+
+.article-author {
+    padding-bottom: 20px;
+    margin-bottom: 9px;
+    border-bottom: 2px solid rgb(180, 170, 170);
+}
+
+.subscribe-member {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 2px solid rgb(180, 170, 170);
+    
+}
+
+.article-content .dropCap {
+    float: left;
+    font-family: replica-gold;
+    font-size: 5em;
+    margin-right: 5px;
+    margin-top: -23px;
+    margin-bottom: -40px;
+    display: inline-block;
+    height: 56;
+}
+
+.article-content .published {
+    font-family: roman-g1;
+    font-size: 0.75em;
+    font-style: normal;
+    line-height: 16px;
+    font-weight: 600;
+    margin-top: 3em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Author Profile */
+
+.author-name {
+    font-family: roman-g1;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.author-profile {
+    display: flex;
+}
+
+.author-location .author-profile-text{
+    margin-left: 0;
+    position: relative;
+    top: -13px;
+    
+}
+
+.author-profile-text {
+    margin-left: 7em;
+}
+
+.author-profile-img {
+    display: block;
+    margin: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+}
+
+.author-name .social-icon {
+    position: absolute;
+}
+
+.social-icon li {
+    display: inline-block; 
+}
+
+.social-icon ul {
+    list-style: none;
+    padding-left: 1em; 
+}

@@ -1,0 +1,25 @@
+.trailer-img {
+    position: relative;
+}
+
+.trailer-img::before {
+    content: '';
+    position: absolute;
+    background: rgba(0,0,0,0.01);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+}
+
+/*  Trailers */
+.trailer-img::after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f144';
+    position: absolute;
+    color: #ffffff;
+    font-size: 65px;
+    top: 30%;
+    right: 50%;
+    pointer-events: none;
+}

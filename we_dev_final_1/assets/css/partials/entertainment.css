@@ -1,0 +1,82 @@
+
+/* Entertainment news Header */
+
+.entertainment-header h5{
+    font-family: roman-g1, Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    text-transform: none;
+    text-align: left;
+    display: block;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgb(180, 170, 170);
+    
+}
+
+.news-metadata {
+    display: flex;
+}
+
+
+
+/* Entertainment news Metadata */
+
+.news-metadata .writer-name {
+    font-family: replica-gold, Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 550;
+    padding-top: 1.5px;
+    text-align: left;
+
+}
+
+.writer-name .published-data {
+    position: absolute;
+}
+
+.published-data {
+    font-family: roman-g1, Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: rgb(165, 157, 157);
+    padding-left: 1em;
+}
+
+.news-metadata-share {
+    position: relative;
+    left: -30px;
+
+    bottom: 0.6em;
+    font-size: 30px;
+}
+
+.news-metadata-share li{
+   display: inline-block;
+}
+
+.news-metadata-share ul {
+    list-style: none;
+    text-align: left;
+}
+
+/* video link for main content*/
+
+.main-entertainment-content .dropCap {
+    float: left;
+    font-family: replica-gold;
+    font-size: 5em;
+    margin-right: 5px;
+    margin-top: -23px;
+    margin-bottom: -40px;
+    display: inline-block;
+    height: 56;
+}
+.lightboxright {
+    width:500;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+}
+.lightboxright iframe {
+    height: 350px;
+    width: 100%; 
+    border: 4px solid black;
+}

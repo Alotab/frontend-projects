@@ -1,0 +1,63 @@
+.post-block h1 {
+    font-size: 1.5em;
+    line-height: 26px;
+    margin-top: 5px;
+}
+
+.post-block p.excerpt {
+    font-family: roman-g1, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.125em;
+    line-height: 28px;
+    text-transform: none;
+    letter-spacing: 0;
+    padding-top: 0;
+    
+
+}
+
+.post-block p.author {
+    padding-top: 0px;
+}
+
+.post-block a {
+    text-decoration: none;
+    display:inline-block;
+    color: black;
+    font-size: 22px;
+    font-weight: 700;
+    padding-top: 10px;
+    text-align:inherit;
+
+}
+
+.post-block a:hover {
+    text-decoration: underline;
+}
+
+.post-block a.author-info {
+    font-weight: lighter;
+    font-size: 0.75em;
+    font-family: replica-gold;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+}
+
+.post-block .author {
+    font-family: replica-gold;
+    text-transform: uppercase;
+    
+}
+
+.post-block p {
+    padding-top: 1px;
+}
+
+/* ad banner */
+
+.banner-img a {
+    
+    background-color: aqua;
+    
+}

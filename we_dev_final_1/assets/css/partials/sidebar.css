@@ -1,0 +1,132 @@
+.widget {
+    margin-bottom: 35px;
+}
+
+.widget-title {
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px 10px;
+    text-transform: uppercase;
+}
+
+.latest-news-items {
+    margin-top: 15px;
+}
+
+.latest-news {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item-thumbnail {
+    float: left;
+}
+
+.item-thumbnail img {
+    display: block;
+}
+
+.latest-news-item .item-thumbnail {
+    margin-right: 20px;
+}
+
+.news-title {
+    font-size: 16px;
+}
+
+.news-title a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.news-date {
+    font-size: 13px;
+    font-style: italic;
+    color: #33333394;
+}
+
+
+/* Social Widget */
+.widget .widget-content table tr td {
+    width: 20%;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 15px;
+}
+
+.widget .widget-content table {
+    width: 100%;
+}
+
+.widget .widget-content table tr td p {
+    line-height: 1px;
+    font-size: 12px;
+}
+
+.widget .widget-content table tr td i {
+    padding-bottom: 20px;
+}
+
+/* Ad Widget */
+.sidebar-ad img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+/* Tags */
+.widget .widget-content .sidebar-tags ul {
+    list-style: none;
+    padding-left: 0;
+    line-height: 40px;
+}
+
+.widget .widget-content .sidebar-tags ul li {
+    display: inline;
+    background-color: #edeeef;
+    border: 1px solid #efe0e0;
+    color: #333333;
+    font-size: 12px;
+    padding: 6px 8px;
+
+}
+
+.widget .widget-content .sidebar-tags ul li:hover {
+    background-color: var(--main-accent);
+    color: #ffffff;
+    cursor: pointer;
+    transition: .8s;
+}
+
+/* Categories */
+.widget .widget-content .sidebar-categories ul {
+    list-style: none;
+}
+
+.widget .widget-content .sidebar-categories ul li {
+    border-bottom: 1px solid #edeeef;
+    margin-left: -30px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-weight: 400;
+}
+
+.widget .widget-content .sidebar-categories ul li::before {
+    content: '\f105';
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 10px;
+    font-weight: 600;
+}
+
+.widget .widget-content .sidebar-categories ul li span {
+    background-color: var(--main-accent);
+    float: right;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
