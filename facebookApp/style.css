@@ -17,9 +17,6 @@
     --bg-color: #000;
 }
 
-
-
-
 body{
     background: var(--body-color);
     transition: background 0.3s;
@@ -719,9 +716,6 @@ nav{
 }
 
 
-
-
-
 /*----------- footer -------*/
 .footer{
     text-align: center;
@@ -795,6 +789,37 @@ nav{
     }
     .post-input-container{
         padding-left: 0;
+    }
+
+    /*------------ Porfile -----------*/
+    .profile-container{
+        padding: 20px 5%;
+    }
+
+    .profile-details{
+        flex-wrap: wrap;
+    }
+
+    .pd-right{
+        text-align: left;
+        margin-top: 15px;
+    }
+
+    .pd-right button{
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .pd-row div h3{
+        font-size: 16px;
+    }
+
+    .profile-info{
+        flex-wrap: wrap;
+    }
+
+    .info-col, .post-col{
+        flex-basis: 100%;
     }
 
 
