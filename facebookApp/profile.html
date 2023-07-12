@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!--=============== REMIXICON ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <img src="images/logo.png" alt="logo" class="logo">
+            <ul> <li><img src="images/notification.png" alt=""></li></ul>
+            <ul><li><img src="images/inbox.png" alt=""></li></ul>
+            <ul><li><img src="images/video.png" alt=""></li></ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="images/search.png" alt="">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+                <img src="images/profile-pic.png" alt="">
+            </div>
+        </div>
+
+        <!--- drop down-menu/settings-menu------->
+        <div class="settings-menu">
+
+            <!-- dark mode -->
+            <div id="dark-btn">
+                <span></span>
+            </div>
+
+            <div class="setting-menu-inner">
+                <div class="user-profile">
+                    <img src="images/profile-pic.png" alt="">
+                    <div>
+                        <p>Jame Nichole</p>
+                        <a href="#">See your profile</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-profile">
+                    <img src="images/feedback.png" alt="">
+                    <div>
+                        <p>Give Feedback</p>
+                        <a href="#">Help us to improve the new design</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="settings-links">
+                    <img src="images/setting.png" alt="" class="setting-icon">
+                    <a href="#">Setting & Privacy <img src="images/arrow.png" width="10px" alt=""></a>
+                </div>
+                <div class="settings-links">
+                    <img src="images/help.png" alt="" class="setting-icon">
+                    <a href="#">Help & Support <img src="images/arrow.png" width="10px" alt=""></a>
+                </div>
+                <div class="settings-links">
+                    <img src="images/display.png" alt="" class="setting-icon">
+                    <a href="#">Display & Accessibility<img src="images/arrow.png" width="10px" alt=""></a>
+                </div>
+                <div class="settings-links">
+                    <img src="images/logout.png" alt="" class="setting-icon">
+                    <a href="#">Logout<img src="images/arrow.png" width="10px" alt=""></a>
+                </div>
+            </div>
+           
+        </div>
+    </nav>
+
+
+    <!-------------------------- PROFILE PAGE ----------------->
+    <div class="profile-container">
+        <img src="images/cover.png" class="cover-img">
+        <div class="profile-details">
+            <div class="pd-left">
+                <div class="pd-row">
+                    <img src="images/profile.png" class="pd-image" alt="">
+                    <div>
+                        <h3>Jack Willson</h3>
+                        <p>120 Friends - 20 mutual</p>
+                        <img src="images/member-1.png" alt="">
+                        <img src="images/member-2.png" alt="">
+                        <img src="images/member-3.png" alt="">
+                        <img src="images/member-4.png" alt="">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="pd-right">
+
+                <button type="button"><img src="images/add-friends.png" alt="">Friend</button>
+                <button type="button"><img src="images/message.png" alt=""> Message</button>
+                <br>
+                <a href="#"><img src="images/more.png" alt=""></a>
+
+            </div>
+        </div>
+
+
+        <div class="profile-info">
+            <div class="info-col">
+                <div class="profile-intro">
+                    <h3>Intro</h3>
+                    <p class="intro-text">Believe in yourself and you can do evrything <img src="images/feeling.png" alt=""></p>
+                    <hr>
+                    <ul>
+                        <li><img src="images/profile-job.png"> Directro at 99media Ltd</li>
+                        <li><img src="images/profile-study.png"> Studied at Central University</li>
+                        <li><img src="images/profile-study.png"> Went to Knock Brain School</li>
+                        <li><img src="images/profile-home.png"> Lives in London, UK</li>
+                        <li><img src="images/profile-location.png"> From Nottingham, Uk</li>
+                    </ul>
+                </div>
+
+                <div class="profile-intro">
+                    <div class="title-box">
+                        <h3>Photos</h3>
+                        <a href="#">All Photos</a>
+                    </div>
+        
+                    <div class="photo-box">
+                        <div><img src="images/photo1.png" alt=""></div>
+                        <div><img src="images/photo2.png" alt=""></div>
+                        <div><img src="images/photo3.png" alt=""></div>
+                        <div><img src="images/photo4.png" alt=""></div>
+                        <div><img src="images/photo5.png" alt=""></div>
+                        <div><img src="images/photo6.png" alt=""></div>
+                    </div>
+                </div>
+
+
+                <div class="profile-intro">
+                    <div class="title-box">
+                        <h3>Friends</h3>
+                        <a href="#">All Friends</a>
+                    </div>
+                    <p>120 (10 mutual)</p>
+        
+                    <div class="friends-box">
+                        <div><img src="images/member-1.png" alt=""><p>Abigail C</p></div>
+                        <div><img src="images/member-2.png" alt=""><p>James A</p> </div>
+                        <div><img src="images/member-3.png" alt=""><p>Naomi B</p></div>
+                        <div><img src="images/member-4.png" alt=""><p>Daniel K</p></div>
+                        <div><img src="images/member-5.png" alt=""><p>Thomas P</p></div>
+                        <div><img src="images/member-6.png" alt=""><p>Janet Q</p></div>
+                        <div><img src="images/member-7.png" alt=""><p>Mat L</p></div>
+                        <div><img src="images/member-8.png" alt=""><p>Yvonne W</p></div>
+                        <div><img src="images/member-9.png" alt=""><p>Jose W</p></div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <div class="post-col">
+                <div class="write-post-container">
+                    <div class="user-profile">
+                        <img src="images/profile-pic.png" alt="">
+                        <div>
+                            <p>Jame Nichole</p>
+                            <small>Public <i class="ri-arrow-down-s-fill"></i></small>
+                        </div>
+                    </div>
+    
+                    <div class="post-input-container">
+                        <textarea rows="3" placeholder="What's on your mind, John?"></textarea>
+    
+                        <div class="add-post-links">
+                            <a href="#"><img src="images/live-video.png" alt="">Live Video</a>
+                            <a href="#"><img src="images/photo.png" alt="">Photo Video</a>
+                            <a href="#"><img src="images/feeling.png" alt="">Feeling/Activity</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="images/profile-pic.png" alt="">
+                            <div>
+                                <p>Jame Nichole</p>
+                                <span>June 24 2021, 13:40 PM</span>
+                            </div>
+                        </div>
+    
+                        <a href="#"><i class="ri-more-2-fill"></i></a>
+                    </div>
+               
+                    <p class="post-text">Subscribe <span>@DevwihCode</span> Content page to read more about web development. <a href="#">#DevwithCode</a>  <a href="#">#Blogging</a></p>
+                    <img src="images/feed-image-1.png" alt="" class="post-img">
+    
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="images/like-blue.png" alt="">120</div>
+                            <div><img src="images/comments.png" alt="">23</div>
+                            <div><img src="images/share.png" alt="">200</div>
+                        </div>
+                        <div class="post-profile-icon">
+                            <img src="images/profile-pic.png" alt=""><i class="ri-arrow-down-s-fill"></i>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="images/profile-pic.png" alt="">
+                            <div>
+                                <p>Max Brown</p>
+                                <span>March 15 2023, 13:40 PM</span>
+                            </div>
+                        </div>
+    
+                        <a href="#"><i class="ri-more-2-fill"></i></a>
+                    </div>
+               
+                    <p class="post-text">Join us at <span>@DevwihCode</span>for your latest web development tutorials.<a href="#">#Blogging</a></p>
+                    <img src="images/feed-image-2.png" alt="" class="post-img">
+    
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="images/like-blue.png" alt="">500</div>
+                            <div><img src="images/comments.png" alt="">13</div>
+                            <div><img src="images/share.png" alt="">100</div>
+                        </div>
+                        <div class="post-profile-icon">
+                            <img src="images/profile-pic.png" alt=""><i class="ri-arrow-down-s-fill"></i>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="images/profile-pic.png" alt="">
+                            <div>
+                                <p>Jame Nichole</p>
+                                <span>May 5 2023, 10:40 PM</span>
+                            </div>
+                        </div>
+    
+                        <a href="#"><i class="ri-more-2-fill"></i></a>
+                    </div>
+               
+                    <p class="post-text">We are in ready to bring it to your door steps  <a href="#">#DevwithCode</a></p>
+                    <img src="images/feed-image-3.png" alt="" class="post-img">
+    
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="images/like-blue.png" alt="">300</div>
+                            <div><img src="images/comments.png" alt="">90</div>
+                            <div><img src="images/share.png" alt="">500</div>
+                        </div>
+                        <div class="post-profile-icon">
+                            <img src="images/profile-pic.png" alt=""><i class="ri-arrow-down-s-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="footer">
+        <p>Copyright 2023 - DevwithCode - Web development Webpage</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
