@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+
+            <div class="search-box">
+                <img src="images/search.png" alt="">
+                <input type="text" placeholder="search">
+            </div>
+        </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="#" class="active-link"><img src="images/home.png" alt=""><span>Home</span></a></li>
+                <li><a href="#"><img src="images/network.png" alt=""><span>My Network</span></a></li>
+                <li><a href="#"><img src="images/jobs.png" alt=""><span>Jobs</span></a></li>
+                <li><a href="#"><img src="images/message.png" alt=""><span>Messaging</span></a></li>
+                <li><a href="#"><img src="images/notification.png" alt=""><span>Notifications</span></a></li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <div class="online">
+                <img src="images/user-1.png" alt="" class="nav-profile-img" onclick="toggleMenu()">
+            </div>
+        </div>
+        <!------------ Profile drop down menu------------->
+        <div class="profile-menu-wrap" id="profile-menu">
+            <div class="profile-menu">
+                <div class="user-info">
+                    <img src="images/user-1.png">
+                    <div>
+                        <h3>James Walts</h3>
+                        <a href="#">See your profile</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="#" class="profile-menu-link">
+                    <img src="images/feedback.png">
+                    <p>Give Feedback</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="profile-menu-link">
+                    <img src="images/setting.png">
+                    <p>Settings & Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="profile-menu-link">
+                    <img src="images/help.png">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="profile-menu-link">
+                    <img src="images/display.png">
+                    <p>Display  & Accessibility</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="profile-menu-link">
+                    <img src="images/logout.png">
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+
+            
+            </div>
+        </div>
+
+
+    </nav>
+
+    <!------------------  Profile page------------>
+    <div class="container">
+        <div class="profile-main">
+            <div class="profile-container">
+                <img src="images/cover-pic.png" width="100%">
+                <div class="profile-container-inner">
+                    <img src="images/user-1.png" class="profile-pic">
+                    <h1>Albert Walts</h1>
+                    <b>Web Developer at Microsoft | Former developer at DataStack and Intern at Oracle</b>
+                    <p>San Francisco, United States &middot; <a href="#">Contact info</a></p>
+                    <div class="mutual-connection">
+                        <img src="images/user-2.png" alt="">
+                        <span>1 mutual connection: Orlando Diggs</span>
+                    </div>
+                    <div class="profile-btn">
+                        <a href="#" class="primary-btn"><img src="images/connect.png" alt="">Connect</a>
+                        <a href="#"><img src="images/chat.png" alt="">Message</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-description">
+                <h2>About</h2>
+                <p>The success of every website depends on search engine optimissation and digital strategy. if you are the first page of all major search engines then you are ahead among your competitors</p>
+                <a href="#" class="see-more-link">See more...</a>
+            </div>
+            <div class="profile-description">
+                <h2>Experince</h2>
+                <div class="profile-desc-row">
+                    <img src="images/microsoft.png" alt="">
+                    <div>
+                        <h3>Lead Front-End Developer</h3>
+                        <b>microsoft &middot; Full-time</b>
+                        <b>Feb 2021 - Present &middot; 1.5 years</b>
+                        <p>Computer programming is the process of perfomring a particular computation, usually by designing and building an executable coputer program.</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="profile-desc-row">
+                    <img src="images/slack.png" alt="">
+                    <div>
+                        <h3>Full Stack Developer</h3>
+                        <b>slack &middot; Full-time</b>
+                        <b>Feb 2018 - Jan 2021 &middot; 2.6 years</b>
+                        <p>Computer programming is the process of perfomring a particular computation, usually by designing and building an executable coputer program.</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="profile-desc-row">
+                    <img src="images/google.png" alt="">
+                    <div>
+                        <h3>Web Developer </h3>
+                        <b>Google Inc &middot; Full-time</b>
+                        <b>Sep 2015 - May 2018 &middot; 1.5 years</b>
+                        <p>Computer programming is the process of perfomring a particular computation, usually by designing and building an executable coputer program.</p>
+                        <hr>
+                    </div>
+                </div>
+                <hr>
+                <a href="#" class="experince-link">Show all 7 experincess <img src="images/right-arrow.png" alt=""></a>
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="profile-sidebar"></div>
+    </div>
+
+
+
+
+
+    <!---------------------javascript ----------------->
+    <script src="script.js"></script>
+    
+</body>
+</html>
