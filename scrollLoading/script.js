@@ -16,6 +16,8 @@ async function getPost(){
     return data;
 }
 
+
+
 //render data into elements in DOM
 async function showPosts(){
     const  posts = await getPost()

@@ -67,6 +67,7 @@ const generateResponse = (incomingChatLi) => {
 }
 
 
+//chatbot
 const handleChat = () =>  {
     userMessenger = chatInput.value.trim();
     if(!userMessenger) return;
