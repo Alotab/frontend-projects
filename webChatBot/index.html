@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!--=============== REMIXICON ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+    <div class="chatbox-container">
+
+        <button class="chatbot-toggler">
+            <span class="material-symbols-outlined"><i class="ri-message-3-line"></i></span>
+            <span class="material-symbols-outlined"><i class="ri-close-line"></i></span>
+        </button>
+
+        <div class="chatbot">
+            <section>
+                <h2>Chatbot</h2>
+                <span class="close-btn material-symbols-outlined"><i class="ri-close-line"></i></span>
+            </section>
+            <ul class="chatbox">
+                <li class="chat incoming">
+                    <span class="material-symbols-outlined">
+                        <img src="images/chatbot.png" alt="">
+                    </span>
+                    <p>Hi there <br> How can I help you</p>
+                </li>
+                <li class="chat outgoing">
+                    <!-- delete for JavaScript -->
+                    <!-- <p>I'm here to have a talk with you</p>
+                    <span class="material-symbols-outlined">
+                        <img src="images/user.png" alt="">
+                    </span> -->
+                    
+                </li>
+                <div class="chat-input">
+                    <textarea placeholder="Enter your message" required></textarea>
+                    <span id="send-btn" class="material-symbols-outlined">
+                        <img src="images/send-message.png" alt="">
+                    </span>
+                </div>
+            </ul>
+        </div>
+    
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
