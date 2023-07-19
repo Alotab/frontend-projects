@@ -103,41 +103,135 @@ window.onload = preventScrolling;
 
 //external share links
 
+const detailImage = document.querySelector(".post-image");
 
-const detailPost = document.querySelector('.main-post');
-const bottomShareLink = document.querySelector('.share-link');
-const shareScroll = document.querySelector('.share-scroll');
+const sharelinkOne = document.querySelector(".share-link");
+const postdetailOne = document.querySelector(".post-main-detail");
+const externalOne = document.querySelector(".external-share-container");
 
 
-// console.log(detailPost.offsetHeight);
+// Create a function to check if the div is reached
+function isDivReached() {
+  // Get the current scroll position
+  const scrollPosition = window.scrollY;
 
-window.addEventListener("scroll", (e) =>{
+  // Check if the scroll position is greater than or equal to the top of the div
+  return scrollPosition >= externalOne.offsetTop - 750;
+}
+
+// Add an event listener to the window scroll event
+window.addEventListener('scroll', function (e) {
     e.preventDefault();
-    // if(window.scrollY > detailPost.offsetHeight - detailPost.offsetTop + 76){
-    //     bottomShareLink.classList.remove('.share-scroll');
-    //     // alert('he')
-    // }
+  // Check if the div is reached
+  if (isDivReached()) {
+    sharelinkOne.classList.add('share-java');
+  }
+  else {
+    sharelinkOne.classList.remove('share-java');
+  }
 
-    // if(window.screenY < detailPost.offsetHeight - detailPost.offsetTop6){
-    //     console.log('hi')
-    // }
-})
+});
 
 
-$(window).scroll(function() {
-    var thirdDiv = $('.detail-post');
-    if($(this).scrollTop() + $(this).height() >= thirdDiv.offset().top && $(this).scrollTop() <= thirdDiv.offset().top + thirdDiv.outerHeight()) {
-       console.log("You have reached the bottom of the screen and the third div!");
+function Reached() {
+    // Get the current scroll position
+    const scrollPosition = window.scrollY;
+
+    // Check if the scroll position is greater than or equal to the top of the div
+    return scrollPosition <= externalOne.offsetTop;
+}
+
+
+window.addEventListener('scroll', function (e) {
+   
+    if(Reached){
+        sharelinkOne.classList.add("share-scroll");
     }
- });
+});
 
 
-//  $(window).scroll(function() {
-//     var thirdDiv = $('.detail-post');
-//     if($(this).scrollTop() <= thirdDiv.offset().top && $(this).scrollTop() + $(this).height() >= thirdDiv.offset().top + thirdDiv.outerHeight()) {
-//        console.log("You have reached the top of the screen and the third div!");
-//     }
-//  });
+window.addEventListener('scroll', function (e) {
+    const scrollPosition = window.pageYOffset;
+    
+    if (scrollPosition <= externalOne.offsetTop - 798) {  //>= externalOne.offsetTop
+        sharelinkOne.classList.add('share-scroll');
+    } else {
+        sharelinkOne.classList.remove('share-scroll');
+        
+
+    }
+});
+
+
+// show the social media links when the share icon is clicked
+const shareEl = document.querySelector('.share-share');
+const socialContainerEl = document.querySelector('.social-cs99');
+
+shareEl.addEventListener('click', () => {
+    // socialContainerEl.classList.add('social-cs99-scroll');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const sectionOneOption = {
+   
+// };
+// const sectionOneOption = {
+//     // rootMargin: "-100px 0px 0px 0px"
+// };
+
+// const sectionOneObserver = new IntersectionObserver(function(entries, sectionOneObserver){
+
+//         entries.forEach(entry => {
+//             if(!entry.isIntersecting){
+//                 sharelinkOne.classList.add('share-scroll');
+//             }
+           
+//         })
+// }, sectionOneOption);
+
+// sectionOneObserver.observe(sharelinkOne);
+
+
+
+// const detailObserver  = new IntersectionObserver(function(entries, sectionOneObserver){
+//     entries.forEach(entry => {
+//         if(!entry.isIntersecting){
+            
+//         }
+//         else{
+            
+//             sharelinkOne.classList.add('share-java');
+//         }
+//     })
+// }, sectionOneOption)
+
+// detailObserver.observe(postdetailOne);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
