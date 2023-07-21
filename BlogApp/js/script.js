@@ -178,7 +178,7 @@ shareEl.addEventListener('click', () => {
 });
 
 
-
+//show widget when mouseover icon
 const likeMouseOver = document.querySelector('.share-like');
 const commentMouseOver = document.querySelector('.share-comment');
 const bookmarkMouseOver = document.querySelector('.share-bookmark');
@@ -227,6 +227,26 @@ function showWidget() {
     });
 };
 showWidget();
+
+
+// copy permalink/url when user click permalink button
+const permalinkEl = document.querySelector('.permalink');
+const copyArticl = document.querySelector('.permalink-message');
+
+
+
+permalinkEl.addEventListener('click', (e) => {
+    copyArticl.classList.add('show-permalink-message');
+    e.preventDefault();
+
+
+    setTimeout(()=>{
+        copyArticl.classList.remove('show-permalink-message');
+    }, 1000)
+})
+
+
+
 
 
 // const shareLinkElements = document.querySelector('.share-link');
