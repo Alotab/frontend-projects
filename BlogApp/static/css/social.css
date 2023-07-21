@@ -1,0 +1,157 @@
+
+.social-cs99{
+    /* position: absolute; */
+    bottom: 50%;
+    /* top: 9; */
+    right: 15%;
+    display: inline-block;
+    /* transform: translate(-50%, -50%); */
+    z-index: 999999;
+    margin-bottom: 34px;
+  
+  
+    width: 16rem;
+    border-radius: 0.75rem;
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(226 232 240 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 0.5rem 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(51 65 85 / var(--tw-text-opacity));
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(0 0 #0000),0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+    display: none;
+}
+
+
+.social-cs99-scroll{
+    /* position: fixed; */
+    /* position: relative; */
+    bottom: 6.5%;
+    /* right: 15%; */
+   
+    z-index: 999999;
+    margin-bottom: 34px;
+    /* justify-content: center; */
+  
+    display: block;
+  
+  
+    position: fixed;
+    align-items: center;
+    text-align: center;
+    /* top: 50%; */
+    right: 40%;
+    width: 16rem;
+    border-radius: 0.75rem;
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(226 232 240 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 0.5rem 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(51 65 85 / var(--tw-text-opacity));
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(0 0 #0000),0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+}
+  
+
+
+
+
+
+
+/* .social-cs99 a{
+ width: 100%;
+ flex-flow: row wrap;
+ -moz-box-align: center;
+
+ padding: 1.5rem 0.5rem;
+
+ --tw-text-opacity: 1;
+ color: rgb(71 85 105 / var(--tw-text-opacity));
+ border-radius: 0.25rem;
+
+ font-size: 1.1rem;
+ line-height: 1.25rem;
+ font-weight: 400;
+ outline: transparent solid 2px !important;
+ outline-offset: 2px !important;
+ text-decoration: inherit;
+
+  display: flex;
+  align-items: center;
+
+ 
+  margin-bottom: 2px;
+  transition: background 0.1s;
+} */
+
+.social-cs99 a:hover{
+    background: #f0f2f5;
+}
+
+.social-cs99 a i {
+/* color: red; */
+font-size: 2rem;
+margin-right: 6px;
+--tw-text-opacity: 1;
+color: rgb(71 85 105 / var(--tw-text-opacity));
+display: block;
+}
+
+.social-cs99 a p{
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+
+font-size: 1.4rem;
+font-weight: 400;
+--tw-text-opacity: 1;
+color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
+
+
+
+
+<!----------- Social Media Link- ------------------>
+                    <div class="socia-media-container">
+                            <div class="social-cs99">
+                                <a href="#">
+                                    <i class="ri-twitter-fill"></i><p>Twitter</p>
+                                </a>
+                                <a href="#">
+                                    <i class="ri-reddit-fill"></i><p>Reddit</p>
+                                </a>
+                                <a href="#">
+                                    <i class="ri-linkedin-box-fill"></i><p>Linkedin</p>
+                                </a>
+                                <a href="#">
+                                    <i class="ri-twitch-fill"></i><p>Twitch</p>
+                                </a>
+                                <a href="#">
+                                    <i class="ri-whatsapp-fill"></i><p>Whatsapp</p>
+                                </a>
+                                <a href="#">
+                                    <i class="ri-facebook-circle-fill"></i><p>Facebook</p>
+                                </a>
+                                <a href="#">
+                                    <i class="ri-links-line"></i><p>Permalink</p>
+                                </a>
+                                
+                            </div>
+                    </div>
+  

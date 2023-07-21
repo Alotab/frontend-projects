@@ -1,8 +1,4 @@
 /*============ SHOW MENU =================== */
-// const navMenu = document.getElementById('nav-menu')
-// const navToggle = document.getElementById('nav-toggle');
-// const navClose = document.getElementById('nav-close');
-
 const primaryNav = document.querySelector('.primary-navigation');
 const navToggleMobile = document.querySelector('.mobile-nav-toggle');
 const navCloseToggle = document.querySelector('.mobile-nav-toggle-close');
@@ -21,33 +17,7 @@ const chatbotCloseBtn = document.querySelector(".close-btn");
 
 
 
-
-
-
-
-
-
-// prevent and enable scrolling when hambuger menu is clicked
-function disableScroll() {
-    // Get the current page scroll position
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-  
-        // if any scroll is attempted, set this to the previous value
-        window.onscroll = function() {
-            window.scrollTo(scrollLeft, scrollTop);
-        };
-  }
-  
-function enableScroll() {
-    window.onscroll = function() {};
-}  
-
-
-
-
 /*============ middle search bar =================*/
-
 if(elSearcIcon){
     elSearcIcon.addEventListener('click', ()=>{
         elSearchMenu.classList.add('middle-search');
@@ -56,7 +26,6 @@ if(elSearcIcon){
 
 
 /*========== Hambuger Menu for small devices =============*/
-
 navToggleMobile.addEventListener('click', () => {
     const visibility = primaryNav.getAttribute('data-visible');
     // const hamMenuVisibility = navToggleMobile.getAttribute('data-visible');
@@ -69,7 +38,6 @@ navToggleMobile.addEventListener('click', () => {
     } 
 });
 
-
 navCloseToggle.addEventListener('click', () => {
     const visibility = primaryNav.getAttribute('data-visible');
 
@@ -81,10 +49,6 @@ navCloseToggle.addEventListener('click', () => {
     }
 });
 
-
-
-
-
 function preventScrolling() {
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('mobile-nav-toggle')) {
@@ -95,16 +59,28 @@ function preventScrolling() {
         }
     });
 }
-
 window.onload = preventScrolling;
 
+// prevent and enable scrolling when hambuger menu is clicked
+function disableScroll() {
+    // Get the current page scroll position
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+  
+        // if any scroll is attempted, set this to the previous value
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+}
+  
+// function enableScroll() {
+//     window.onscroll = function() {};
+// } 
 
 
 
-//external share links
-
+/*=============== EXTERNAL LINK SCREEN  ===============*/
 const detailImage = document.querySelector(".post-image");
-
 const sharelinkOne = document.querySelector(".share-link");
 const postdetailOne = document.querySelector(".post-main-detail");
 const externalOne = document.querySelector(".external-share-container");
@@ -129,9 +105,7 @@ window.addEventListener('scroll', function (e) {
   else {
     sharelinkOne.classList.remove('share-java');
   }
-
 });
-
 
 function Reached() {
     // Get the current scroll position
@@ -141,15 +115,12 @@ function Reached() {
     return scrollPosition <= externalOne.offsetTop;
 }
 
-
+// prevent scroll event
 window.addEventListener('scroll', function (e) {
-   
     if(Reached){
         sharelinkOne.classList.add("share-scroll");
     }
 });
-
-
 window.addEventListener('scroll', function (e) {
     const scrollPosition = window.pageYOffset;
     
@@ -157,73 +128,120 @@ window.addEventListener('scroll', function (e) {
         sharelinkOne.classList.add('share-scroll');
     } else {
         sharelinkOne.classList.remove('share-scroll');
-        
-
     }
 });
 
 
-// show the social media links when the share icon is clicked
-const shareEl = document.querySelector('.share-share');
-const socialContainerEl = document.querySelector('.social-cs99');
 
+/*=============== POPUP SHARE LIKE SCREEN ===============*/
+const shareEl = document.querySelector('.share-share');
+const socialContainerEl = document.querySelector('.social-scroll-wrapper');
+const hidePopupWidget = document.querySelector('.kat');
+
+
+
+// function noscrolling(){
+//     shareEl.addEventListener('click', () => {
+//         isSocialLinks = !isSocialLinks;
+    
+//         socialContainerEl.classList.toggle('show-social-links');
+      
+//             // document.body.classList.add('no-scroll');s
+    
+//     });
+//     document.addEventListener('click', (e) => {
+//         if (!socialContainerEl.contains(e.target) && !shareEl.contains(e.target)) {
+//             // socialContainerEl.classList.remove('show-social-links');
+//         }
+//     });
+// }
+
+let showMes = false;
+// var showWidget = true;
 shareEl.addEventListener('click', () => {
-    // socialContainerEl.classList.add('social-cs99-scroll');
+    socialContainerEl.classList.add('show-social-links');
+    likePop.classList.remove('alert-active');
+    
+    showMes = true;
+    if(showMes){
+        document.body.style.overflow = 'hidden';
+        
+    }
+
+    document.addEventListener('click', (e) => {
+        if (!socialContainerEl.contains(e.target) && !shareEl.contains(e.target)) {
+            socialContainerEl.classList.remove('show-social-links');
+            document.body.style.overflow = 'auto';
+          
+        }
+    });    
 });
 
 
 
+const likeMouseOver = document.querySelector('.share-like');
+const commentMouseOver = document.querySelector('.share-comment');
+const bookmarkMouseOver = document.querySelector('.share-bookmark');
+const shareMouseOver = document.querySelector('.share-share');
+const likePop = document.querySelector('.pop-like');
+const commentPop = document.querySelector('.pop-comment');
+const bookmarkPop = document.querySelector('.pop-bookmark');
+const sharePop = document.querySelector('.pop-share');
+
+function showWidget() {
+    likeMouseOver.addEventListener('mouseover', () =>{
+
+        setTimeout(() => {
+            likePop.classList.add('alert-active');
+        }, 10);
+        likeMouseOver.addEventListener('mouseout', () =>{
+            likePop.classList.remove('alert-active');
+        })
+    });
+
+    commentMouseOver.addEventListener('mouseover', () =>{
+        setTimeout(() => {
+            commentPop.classList.add('alert-active');
+        }, 10);
+        commentMouseOver.addEventListener('mouseout', () =>{
+            commentPop.classList.remove('alert-active');
+        })
+    });
+
+    bookmarkMouseOver.addEventListener('mouseover', () =>{
+        setTimeout(() => {
+            bookmarkPop.classList.add('alert-active');
+        }, 10);
+        bookmarkMouseOver.addEventListener('mouseout', () =>{
+            bookmarkPop.classList.remove('alert-active');
+        })
+    });
+
+    shareMouseOver.addEventListener('mouseover', () =>{
+        setTimeout(() => {
+            sharePop.classList.add('alert-active');
+        }, 10);
+        shareMouseOver.addEventListener('mouseout', () =>{
+            sharePop.classList.remove('alert-active');
+        })
+    });
+};
+showWidget();
 
 
+// const shareLinkElements = document.querySelector('.share-link');
+// const lists = document.querySelectorAll('.pop');
 
-
-
-
-
-
-
-
-
-
-
-// const sectionOneOption = {
-   
-// };
-// const sectionOneOption = {
-//     // rootMargin: "-100px 0px 0px 0px"
-// };
-
-// const sectionOneObserver = new IntersectionObserver(function(entries, sectionOneObserver){
-
-//         entries.forEach(entry => {
-//             if(!entry.isIntersecting){
-//                 sharelinkOne.classList.add('share-scroll');
-//             }
-           
-//         })
-// }, sectionOneOption);
-
-// sectionOneObserver.observe(sharelinkOne);
-
-
-
-// const detailObserver  = new IntersectionObserver(function(entries, sectionOneObserver){
-//     entries.forEach(entry => {
-//         if(!entry.isIntersecting){
-            
-//         }
-//         else{
-            
-//             sharelinkOne.classList.add('share-java');
-//         }
+// lists.forEach(list => {
+//     list.addEventListener('mouseover', (e) => {
+//         likePop.classList.add('alert-active');
+//         commentPop.classList.add('alert-active');
 //     })
-// }, sectionOneOption)
 
-// detailObserver.observe(postdetailOne);
-
-
-
-
+//     likeMouseOver.addEventListener('mouseout', () =>{
+//         likePop.classList.remove('alert-active');
+//     })
+// })
 
 
 
@@ -235,13 +253,6 @@ shareEl.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-  
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
