@@ -3070,13 +3070,13 @@
   }
   
   /* update */
-    .detail-post .post-image{
-        height: 30rem;
-        width: 100%
-        /* object-fit: cover;
-        margin-bottom: 2rem;
-        border-radius: 5px 5px 0px 0px; */
-    }
+  .detail-post .post-image{
+      height: 30rem;
+      width: 100%
+      /* object-fit: cover;
+      margin-bottom: 2rem;
+      border-radius: 5px 5px 0px 0px; */
+  }
 
   /* update */
   .main-post{

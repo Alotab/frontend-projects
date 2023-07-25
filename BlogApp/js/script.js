@@ -72,10 +72,10 @@ function disableScroll() {
             window.scrollTo(scrollLeft, scrollTop);
         };
 }
-  
-// function enableScroll() {
-//     window.onscroll = function() {};
-// } 
+
+function enableScroll() {
+    window.onscroll = function() {};
+}  
 
 
 
