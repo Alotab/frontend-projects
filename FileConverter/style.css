@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: var(--body-font-size, 14px);
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    background-color: #0d1117;
+    height: 5rem;
+    
+}
+
+.left-nav, .right-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    color: red;
+    font-weight: 600;
+    line-height: 2px;
+    padding: 12px;
+    margin-right: 1rem;
+}
+nav, .link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.link{
+    margin-right: 1rem;
+    padding: 0 1rem;
+   
+}
+.link p{
+    font-size: 0.9rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* margin-left: 1; */
+    padding-right: 0.3rem;
+}
+.link svg{
+    color: #fff;
+    font-size: 0.9rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+
+.right-nav a{
+    font-size: 1rem;
+    /* padding: 0.5rem; */
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login{
+    border: 1px solid gray;
+    padding: 0.2rem 1.4rem;
+    margin-left: 1.5rem;
+}
+.convertor-wrapper{
+    /* padding: 0 8rem; */
+    /* margin: 0 8rem; */
+    /* margin: 0.5rem 1rem; */
+}
+.conveter-container{
+    width: 50%;
+    background-color: rgb(46, 44, 44);
+    height: 14rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    /* position: absolute; */
+    margin: 0.5rem 18rem;
+}
+
+.upload-box{
+    padding: 1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #150606; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.upload-box:hover{
+    /* background-color: rgb(245, 91, 91); */
+}
+
+.select-file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    width: 12rem;
+    height: 3.95rem;
+    white-space: nowrap;
+    background-color: #f33;
+    cursor: pointer;
+    border-radius: 0.2rem 0 0 0.2rem;
+    
+}
+.select-file:hover{
+    background-color: rgb(72, 6, 6);
+}
+
+.select-file label{
+    /* padding: 1rem 2rem; */
+}
+
+input[type="file"] {
+    color: transparent;
+
+    opacity: 0;
+    /* display: none; */
+
+    height: 100%;
+    /* z-index: 99999; */
+
+    /* width: 100%; */
+    /* background-color: blue; */
+    position: fixed;
+   
+}
+ 
+.select-file form{
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+.select-file i{
+    font-size: 1.2rem;
+    color: #fff;
+    margin-left: 1.3rem;
+    /* display: none; */
+}
+
+.upload-box p{
+    font-size: 1.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+    white-space: nowrap;
+    /* display: none; */
+
+}
+.drop-down{
+    position: relative;
+    color: white;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-width: 2px;
+    background-color: rgb(226, 101, 101);
+    border-radius: 0 0.2rem 0.2rem 0;
+    cursor: pointer;
+}
+
+.drop-down-active{
+    display: block;
+}
+
+.drop-down:hover{
+    background-color: rgb(72, 6, 6);
+}
+.drop-down-list{
+    position: absolute;
+    left: -159px;
+    top: 69px;
+    background-color: rgb(244, 248, 248);
+    width: 15rem;
+    border-radius: 0 0 0.2rem 0.2rem;
+    padding: 0.5rem 0;
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.drop-down-list button{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    white-space: nowrap;
+    border: none;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+    padding: 1.2rem 1rem;
+   
+
+}
+.drop-down-list button:hover{
+    background-color: rgb(173, 167, 167);
+}
+.drop-down-list button i{
+    font-size: 18px;
+    color: #150606;
+}
+.drop-down-list button p{
+    font-size: 18px;
+    margin-left: 1rem;
+    color: #150606;
+}
+
+
+.result-container{
+    height: 3rem;
+    background-color: rgb(143, 138, 138);
+    display: flex;
+
+    /* width: 60%; */
+    width: 60%;
+    /* background-color: rgb(46, 44, 44); */
+    /* height: 14rem; */
+    /* justify-content: center; */
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 1rem 15rem;
+}
+
+
+.file, .convert-result-download{
+    color: aliceblue;
+    font-size: 15px;
+    padding: 1rem 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.file{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.convert-button{
+    padding: 1rem 2rem;
+    background-color: red;
+    align-items: center;
+    justify-content: center;
+    width: 9rem;
+    border-radius: 0.2rem;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+
+    display: flex;
+    position: absolute;
+    right: 280px;
+    display: none;
+}
+
+.convert-button i{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    margin-right: 0.8;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    left: 19px;
+    top: 15px;
+    
+}
+
+.convert-button button{
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+}
+.convert-button button p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+
+
+
+/*--------------------- TODO LIST TRY -------------*/
+.addfiles-Todo{
+    background-color: #fff;
+    margin-top: 6rem;
+    width: 100%;
+}
+.addfiles-Todo ul li{
+    list-style: none;
+    text-decoration: none;
+    background-color: green;
+    margin-bottom: 9px;
+    display: flex;
+    padding: 1rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.addfiles-Todo ul li p{
+    /* background-color: #f33; */
+    padding: 1rem 1.2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    width: 9rem;
+    white-space: nowrap;
+}
+
+.file-size{
+    color: #fff;
+}
+.file-size span{
+    margin-left: 0.2rem;
+}

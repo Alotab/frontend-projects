@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="left-nav">
+            <div class="logo"><p>FileConverter</p></div>
+            <nav>
+                <div class="link">
+                    <p>Convert</p>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"></path></svg> -->
+                    <i class="ri-arrow-down-s-line"></i>
+                </div>
+                <div class="link">
+                    <p>API</p>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"></path></svg> -->
+                    <i class="ri-arrow-down-s-line"></i>
+                </div>
+                <div class="link">
+                    <p>Pricing</p>
+                    <!-- <i class="ri-arrow-down-s-line"></i> -->
+                </div>
+            </nav>
+        </div>
+
+        <div class="right-nav">
+            <a href="#">Sign up</a>
+            <a class="login" href="#">Login</a>
+        </div>
+    </header>
+
+    <div class="convertor-wrapper">
+
+        <div class="conveter-container">
+            <div class="upload-box">
+                <div class="select-file">
+                    <!-- <label for="my-file-input">
+                        <i class="ri-file-add-fill"></i>
+                        <p>Select File</p>
+                        <input type="file" name="pc-upload"  id="my-file-input" enctype="multipart/form-data" multiple="multiple">
+                    </label> -->
+                    <form id="file-form" action="#" method="post">
+                        <i class="ri-file-add-fill"></i>
+                        <p>Select File</p>
+                        <input type="file" id="file-input" name="files[]" multiple="multiple"> 
+                    </form>   
+                </div>
+                <div class="drop-down">
+                    <i class="ri-arrow-down-s-line"></i>
+                    <div class="drop-down-list">
+                        <button><i class="ri-folder-open-fill"></i><p>From my computer</p></button>
+                        <button><i class="ri-links-line"></i><p>By URL</p></button>
+                        <button><i class="ri-drive-fill"></i><p>From Google Drive</p></button>
+                        <button><i class="ri-dropbox-fill"></i><p>From Drop Box</p></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="result-container">
+
+        <div class="addfiles-Todo">
+            <ul id="files-list">
+                <!-- <li>
+                    <p>Book.pdf</p>
+                    <div class="scroll-pick"></div>
+                    <div class="file-size">1.23<span>kb</span></div>
+                    <div class="close-button">x</div>
+                </li> -->
+                <!-- <li> 
+                    <p>Bookloassn.pyssss</p>
+                    <div class="scroll-pick"></div>
+                    <div class="file-size">1.23 <span>kb</span></div>
+                    <div class="close-button">x</div>
+                </li>  -->
+            </ul>
+        </div>
+
+        <!-- <div class="file">
+            <div class="file-logo"><i class="ri-file-pdf-fill"></i></div>
+            <div class="file-name"></div>
+        </div>
+        <div class="coverttype-select">select</div>
+        <div class="convert-result-download">books.csv</div> -->
+    </div>
+    <!-- <div class="convert-button">
+        <i class="ri-recycle-line"></i>
+        <button class="convert"><p>Convert</p></button>
+    </div> -->
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
