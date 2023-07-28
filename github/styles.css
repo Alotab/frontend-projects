@@ -27,6 +27,7 @@ header{
     align-items: center;
     width: 100%;
     padding: 0 1rem;
+    /* background-color: red; */
 
 }
 
@@ -43,13 +44,18 @@ header{
 
 .webs-services{
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
-    margin-right: 2px;
+    z-index: 1;
     
+    margin-right: 2px; 
+}
+.webs-services p{
+    font-size: 16px;
 }
 .webs-services a{
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .webs-services button{
@@ -73,37 +79,90 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
-    /* width: 40%; */
 
 }
 
 .search-input{
     display: flex;
     position: relative;
+    width: 23rem;
 }
 
-.search-icon{
+.search-icon i{
     position: absolute;
-    left: 0;
-    height: 1rem;
-    width: 1rem;
-    color: #fff;
+    left: 10px;
+    bottom: 6px;
+    font-size: 15px;
+    color: gray;
+    
 }
 
 .search-input input[type=text] {
-    padding: 3px 5px;
+    /* padding: 3px 25px; */
+    padding-left: 38px;
     width: 100%;
     box-sizing: border-box;
-    border-radius: 0.2rem;
+    border-radius: 0.3rem;
     border: 1px solid gray;
+    font-size: 13px;
+    font-family: inherit;
+    background-color: rgba(161, 160, 160, 0.199);
+}
+::placeholder{
+    color: rgba(255,255,255,.75);
+    font-size: 15px;
+}
+
+.search-input input{
+    width: 100%;
+    overflow: hidden;
+    background: none;
+    font-size: inherit;
+    word-break: break-word;
+    height: 2.1rem;
+    width: 11rem;
+    margin-right: 1rem;
+}
+input[type="text"] {
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #dedada;
+    /* cursor: pointer; */
+  }
+input[type="text"]:focus {
+    outline: none;
 
 }
 
-
-.user-log{
-    right: 0
-    text-align: right;
+.search-bar svg{
+    position: absolute;
+    right: 20px;
+    bottom: 8px;
+   
+}
+.sign-in-class{
+    font-size: 16px;
+    padding: 5px;
+}
+.sign-up-class{
+    color: #fff;
+    font-size: 16px;
+    padding: 7px;
+    border: 1px solid #fff;
+    border-radius: 0.3rem;
+    margin-left: 3px;
+}
+.sign-in-class:hover{
+    color: #dfdbdb;
+}
+.sign-up-class:hover{
+    border: 1px solid #dedada;
+    padding: 7px;
+    color: #dfdbdb;
+   
 }
 
 
@@ -118,9 +177,29 @@ main{
 .main-bk{
     font-family: "Mona Sans","Mona Sans Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     word-break: keep-all;   
+    z-index: 0;
+   
+}
+.top-0 {
+    top: 0 !important;
+}
+.events-none{
+    pointer-events: none;
+}
+img {
+    border-style: none;
+    background-repeat: no-repeat;
+      background-size: cover;
 }
 
-
+.position-absolute{
+    /* position: absolute !important; */
+    /* left: -1800px; */
+    /* width: 2900px; */
+    /* max-width: 1280px; */
+    /* width: 3900px; */
+    /* max-width: calc(230vw + 1670px); */
+}
 
 
 
@@ -137,8 +216,8 @@ main{
 
 .container-xl img{
     /* background-image: url("https://github.githubassets.com/images/modules/site/home-campaign/hero-bg.webp"); */
-    position: absolute;
-    top: 0 !important;
+    /* position: absolute; */
+    /* top: 0 !important; */
     /* right: -1050px;  */
     /* max-width: 1600px; */
     /* width: 437px; */
