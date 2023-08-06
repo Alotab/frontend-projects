@@ -1218,7 +1218,6 @@
     padding-top: 10rem;
     padding-bottom: 5rem;
   }
-  
   .signup-container{
     position: relative;
     display: flex;
@@ -1238,9 +1237,6 @@
     /* background-image: linear-gradient(rgb(176, 72, 176), rgb(151, 98, 202), rgb(246, 227, 191)); */
     
   }
-  
-  
-  
   .signup-container > div{
     flex: 1;
     overflow: hidden;
@@ -1928,8 +1924,6 @@
     object-fit: cover;
     right: -1px;
   }
-  
-  
   .portfolio-container{
     display: flex;
     flex-wrap: wrap;
@@ -1939,7 +1933,6 @@
     margin-left: 10rem;
     margin-right: 10rem;
   }
-  
   .portfolio-card{
     width: 35rem;
     border-radius: 0.5rem;
@@ -1951,18 +1944,15 @@
     /* cursor: pointer; */
     transition: ease-out;
   }
-  
   .portfolio-card:hove{
     border: 1px solid black;
   }
-  
   .portfolio-card img{
     height: 25rem;
     width: 100%;
     object-fit: cover;
     border-radius: 0.5rem 0.5rem 0 0;
   }
-  
   .portfolio-card h3{
     font-family: Roboto, sans-serif;
     font-weight: 500;
@@ -1972,8 +1962,6 @@
     letter-spacing: 0.5px;
     padding: 0.5rem;
   }
-  
-  
   .blog-metadata{
     display: flex;
     padding: 0.5rem;
@@ -1982,30 +1970,24 @@
     justify-content: space-between;
     align-items: center;
   }
-  
   .portfolio-card p{
     padding: 0.5rem;
     font-size: 1.5rem;
     opacity: 0.7;
   }
-  
   .blog-post-date{
     display: flex;
     justify-content: center;
   }
-  
   .blog-post-date i{
     align-items: center;
     font-size: 1.5rem;
   }
-  
   .date{
     align-items: center;
     font-size: 1.35rem;
     margin-left: 0.6rem;
   }
-  
-  
   .blog-tag{
     display: flex;
     margin: 0;
@@ -2013,7 +1995,6 @@
     text-align: center;
     align-items: center;
   }
-  
   .blog-tag a{
     text-decoration: none;
     font-size: 1.3rem;
@@ -2024,7 +2005,6 @@
     color: rgb(47, 46, 46);
     text-decoration: none;
   }
-  
   .blog-tag a:hover{
     background-color: #94959b;
   }
@@ -2042,17 +2022,13 @@
   width: 55%;
   margin-left: 30px;
 }
-
-
 .search-result-info{
   margin-top: 7rem;
 }
-
 .search-result-info{
   display: flex;
   justify-content: space-between;
 }
-
 .search-result-info section{
   color: green;
   font-size: 14px;
@@ -2060,11 +2036,9 @@
   border-radius: 0.5rem;
   background-color: rgba(165, 162, 162, 0.3);
 }
-
 .search-container {
   margin-top: 1rem;
 }
-
 .search-list{
   display: flex;
   gap: 1rem;
@@ -2074,29 +2048,23 @@
   margin-bottom: 2rem;
   overflow: hidden;
 }
-
-
 .search-list img{
   height: 20rem;
   width: 33%;
 } 
-
 .search-list-content{
   width: 75%;
   padding: 1rem;
 }
-
 .content-date-tags {
   display: flex;
   gap: 1rem;
   margin-bottom: 0.5rem;
 }
-
 .content-date-tags p{
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .content-date-tags .tag p{
   /* font-family: 'Times New Roman', Times, serif; */
   font-family: 'Courier New', Courier, monospace;
@@ -2106,7 +2074,6 @@
   background-color: rgb(187, 185, 185, 0.4);
   border-radius: 0.3rem;
 }
-
 .content-title h2{
   color: rgb(0, 0, 0);
   font-size: 20px;
@@ -2114,23 +2081,19 @@
   font-weight: 200;
   margin-bottom: 0.5rem;
 }
-
 .content-title h2:hover{
   text-decoration: underline;
 }
-
 .content-date-tags .tag{
   display: flex;
   gap: 0.4rem;
 }
-
 .content-snippet p{
   font-size: 15px;
   font-family: Courier New, 'Courier', monospace;
   font-weight: 500;
   margin-top: 1rem;
 }
-
 .search-right-content{
   background-color: blue;
   margin-top: 12rem;
@@ -2149,7 +2112,8 @@
   justify-content: center;
 }
 .share-link{
-  background: #fff;
+  /* background: #fff; */
+  background: greenyellow;
   width: 300px;
  
   height: 45px;
@@ -2182,14 +2146,13 @@
   text-align: center;
 
   /* display: none !important;  */
-  
   bottom: 3%;
-
   border-radius: 30px;
   border: 1px solid rgb(194, 191, 191);
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(0 0 #0000),0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+  /* display: none; */
   
 }
 .social-share{
