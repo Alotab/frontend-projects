@@ -99,9 +99,11 @@ window.addEventListener("scroll", addShareScrollClass);
 
 
 
+const mobileHeight = document.querySelector('.share-link.share-scroll');
 function addShareScrollMobile() {
     const scrollPosition = window.scrollY;
     if(navigator.userAgent.indexOf("MObi") > -1){
+        mobileHeight.style.height = "55px"
         if (externalOne && scrollPosition <= externalOne.offsetTop - 650) {
             sharelinkOne.classList.add("share-scroll");
             } else if (sharelinkOne){
