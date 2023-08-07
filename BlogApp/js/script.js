@@ -85,102 +85,38 @@ const sharelinkOne = document.querySelector(".share-link");
 const postdetailOne = document.querySelector(".post-main-detail");
 const externalOne = document.querySelector(".external-share-container");
 
-function shareLinkfun(entries){
-    const bottom = window.innerHeight - 30;
-    if (entries[0].intersectionRect.bottom >= bottom) {
-        console.log('Element is visible');
-    }
+
+function addShareScrollClass() {
+  const scrollPosition = window.scrollY;
+  if (externalOne && scrollPosition <= externalOne.offsetTop - 700) {
+    sharelinkOne.classList.add("share-scroll");
+  } else if (sharelinkOne){
+    sharelinkOne.classList.remove("share-scroll");
+  }
 }
 
-const options = {
-    // root: null,
-   rootMargin: "0px 0px 30px 0px",
-//    rootMargin: "30px",
-   threshold: 0,
-}
-const shareLinkObserver =  new IntersectionObserver(shareLinkfun, options);
-// shareLinkObserver.observe(sharelinkOne);
+window.addEventListener("scroll", addShareScrollClass);
 
 
 
-// const shareLinkScroll = new IntersectionObserver((entries, observe) => {
-//     // const bottom = window.innerHeight - 50;
-//     // if (entries[0].intersectionRect.bottom <= bottom) {
-//     //     // console.log('Element is bottom');
-
-//     // }
-//     const bottom = window.innerHeight - 30;
-    
-//     if(entries[0].intersectionRect.bottom >= bottom && sharelinkOne.getBoundingClientRect.top <= window.innerHeight / 2){
-//         console.log('hi');
-//         shareLinkScroll.unobserve(sharelinkOne);
-//     }
-// }, {
-//     root: null,
-//     threshold: 0
-// });
-
-// shareLinkScroll.observe(sharelinkOne);
-
-const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-    //   sharelinkOne.classList.add('share-java');
-    //   sharelinkOne.classList.remove('share-scroll');
-     
-    
-      console.log('hi');
-      
-    } else {
-        // sharelinkOne.classList.add('share-scroll');
-    }
-  }, {
-    // rootMargin: '-750px 0px 0px 0px',
-    // rootMargin: "0px 0px 0px 0px",
-    threshold: 0,
-  });
-  
-//   observer.observe(sharelinkOne);
-
-
-//   const sharelinkOne = document.querySelector('#your-div-id');
-  let isDivReached = false;
-  
-  const checkDivPosition = () => {
-    const divTop = externalOne.offsetTop - 750;
-    const divBottom = externalOne.offsetTop + externalOne.offsetHeight - 30;
+function addShareScrollMobile() {
     const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-  
-    if (scrollPosition >= divTop && scrollPosition <= divBottom && !isDivReached) {
-    //   sharelinkOne.classList.add('share-java');
-      isDivReached = true;
-    } else if ((scrollPosition < divTop || scrollPosition > divBottom) && isDivReached) {
-    //   sharelinkOne.classList.remove('share-java');
-    //   isDivReached = false;
-    }else {
-        sharelinkOne.classList.remove('share-java');
+    if(navigator.userAgent.indexOf("MObi") > -1){
+        if (externalOne && scrollPosition <= externalOne.offsetTop - 650) {
+            sharelinkOne.classList.add("share-scroll");
+            } else if (sharelinkOne){
+            sharelinkOne.classList.remove("share-scroll");
+        }
     }
   
-    // if (scrollPosition + windowHeight >= divBottom && !isDivReached) {
-    //   sharelinkOne.classList.add('share-scroll');
-    //   isDivReached = true;
-    // } else if (scrollPosition + windowHeight < divBottom && isDivReached) {
-    //   sharelinkOne.classList.remove('share-scroll');
-    //   isDivReached = false;
-    // }
-  };
+}
   
-  window.addEventListener('scroll', checkDivPosition);
-  
- 
+window.addEventListener("scroll", addShareScrollMobile);
 
 
 
 
-
-
-
-/// Create a function to check if the div is reached
+//// Create a function to check if the div is reached
 // function isDivReached() {
 //   /// Get the current scroll position
 //   const scrollPosition = window.scrollY;
@@ -189,42 +125,17 @@ const observer = new IntersectionObserver((entries) => {
 //   return scrollPosition >= externalOne.offsetTop - 750;
 // }
 
-// Add an event listener to the window scroll event
+// ////Add an event listener to the window scroll event
 // window.addEventListener('scroll', function (e) {
-//     e.preventDefault();
-//   // Check if the div is reached
+    // e.preventDefault();
+  // Check if the div is reached
 //   if (isDivReached()) {
-//     sharelinkOne.classList.add('share-java');
+    // sharelinkOne.classList.add('share-java');
 //   }
 //   else {
-//     sharelinkOne.classList.remove('share-java');
+    // sharelinkOne.classList.remove('share-java');
 //   }
 // });
-
-const socialBox = () => {
-    const scrollPosition = window.scrollY;
-
-
-    if(scrollPosition <= externalOne.offsetTop || scrollPosition <= externalOne.offsetTop - 750){
-        // sharelinkOne.classList.add("share-scroll");
-        sharelinkOne.classList.add('share-java');
-    } else {
-        sharelinkOne.classList.remove('share-java');
-    }
-
-    if(scrollPosition <= externalOne.offsetTop){
-        sharelinkOne.classList.add("share-scroll");
-    }
-
-    if(window.scrollY <= externalOne.offsetTop - 705){
-        sharelinkOne.classList.add('share-scroll');
-    } else {
-        sharelinkOne.classList.remove('share-scroll');
-    }
-}
-
-
-window.addEventListener('scroll', socialBox);
 
 
 // function Reached() {
@@ -235,12 +146,13 @@ window.addEventListener('scroll', socialBox);
 //     return scrollPosition <= externalOne.offsetTop;
 // }
 
-//// prevent scroll event
+// ///// prevent scroll event
 // window.addEventListener('scroll', function (e) {
 //     if(Reached){
 //         sharelinkOne.classList.add("share-scroll");
 //     }
 // });
+
 // window.addEventListener('scroll', function (e) {
 //     const scrollPosition = window.pageYOffset;
     
@@ -250,6 +162,42 @@ window.addEventListener('scroll', socialBox);
 //         sharelinkOne.classList.remove('share-scroll');
 //     }
 // });
+
+
+
+
+
+// const addSocial = new IntersectionObserver(callback =>{
+//     console.log(callback[0].isIntersecting);
+//     if(callback[0].isIntersecting){
+//         sharelinkOne.classList.add('share-scroll');
+//         addSocial.unobserve(sharelinkOne);
+//     }
+    
+// }, {
+//     root: null,
+//     rootMargin: "0px 0px -150px 0px",
+//     // threshold: 1
+// })
+
+// const addSocialss = new IntersectionObserver(callback =>{
+//     console.log(callback[0].isIntersecting);
+//     if(callback[0].isIntersecting){
+//         sharelinkOne.classList.remove('share-scroll');
+//         addSocial.unobserve(sharelinkOne);
+//     }
+// }, {
+//     root: null,
+//     rootMargin: "0px 0px -160px 0px",
+//     // threshold: 1
+// })
+// addSocialss.observe(sharelinkOne);
+
+
+
+
+
+
 
 
 
@@ -408,7 +356,7 @@ const sr = ScrollReveal({
     delay: 400
 })
 sr.reveal(`.home__data, .footer__container, .footer__group`);
-sr.reveal(`.portfolio-container, .portfolio-card`, {delay: 700, origin: 'bottom'})
-sr.reveal(`.portfolio-container, .portfolio-card`, {interval: 100})
-sr.reveal(`.my-profile-introduction`, {origin: 'left'})
+sr.reveal(`.portfolio-container, .portfolio-card`, {delay: 700, origin: 'bottom'});
+sr.reveal(`.portfolio-container, .portfolio-card`, {interval: 100});
+sr.reveal(`.my-profile-introduction`, {origin: 'left'});
 sr.reveal(`.my-profile-image`, {origin: 'right'})
