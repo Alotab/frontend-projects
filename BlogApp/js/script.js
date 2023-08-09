@@ -84,6 +84,43 @@ function enableScroll() {
 const sharelinkOne = document.querySelector(".share-link");
 const postdetailOne = document.querySelector(".post-main-detail");
 const externalOne = document.querySelector(".external-share-container");
+const shareScroll = document.querySelector('.share-scroll');
+
+
+let isAlive = false;
+function addShareScrollBig(){
+    const scrollPosition = window.scrollY;
+    // scrollPosition <= externalOne.offsetTop - 699  desktop  // Small screens, laptops //  
+    //  700 Mini Ipads / some large mobile devices 
+    //  730 large desktop
+    if(scrollPosition <= externalOne.offsetTop - 700){
+        // sharelinkOne.classList.add('active');
+        // externalOne.classList.add('active');
+        shareScroll.classList.add('active');
+        // shareScroll.style.position="fixed";
+        // shareScroll.style.background="pink";
+        
+        
+        isAlive = true;
+        if(isAlive){
+            // sharelinkOne.classList.add('share-scroll');
+            // sharelinkOne.classList.add('active-scroll');
+            
+            // shareScroll.classList.add('active-scroll')
+        }  
+    } else{
+        // shareScroll.style.position="relative";
+        // shareScroll.classList.add('animation-scroll');
+     }
+    if(scrollPosition >= externalOne.offsetTop - 700){
+        shareScroll.classList.remove('active');
+        // shareScroll.style.position="relative";
+        // shareScroll.classList.add('animation-scroll');
+    }
+   
+}
+
+window.addEventListener("scroll", addShareScrollBig);
 
 
 function addShareScrollClass() {
@@ -94,9 +131,7 @@ function addShareScrollClass() {
     sharelinkOne.classList.remove("share-scroll");
   }
 }
-
-window.addEventListener("scroll", addShareScrollClass);
-
+// window.addEventListener("scroll", addShareScrollClass);
 
 
 const mobileHeight = document.querySelector('.share-link.share-scroll');
@@ -112,8 +147,7 @@ function addShareScrollMobile() {
     }
   
 }
-  
-window.addEventListener("scroll", addShareScrollMobile);
+// window.addEventListener("scroll", addShareScrollMobile);
 
 
 
