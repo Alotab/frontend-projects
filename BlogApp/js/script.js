@@ -94,149 +94,18 @@ function addShareScrollBig(){
     //  700 Mini Ipads / some large mobile devices 
     //  730 large desktop
     if(scrollPosition <= externalOne.offsetTop - 700){
-        // sharelinkOne.classList.add('active');
-        // externalOne.classList.add('active');
         shareScroll.classList.add('active');
+        shareScroll.classList.remove('share-scroll-position');
         // shareScroll.style.position="fixed";
         // shareScroll.style.background="pink";
-        
-        
-        isAlive = true;
-        if(isAlive){
-            // sharelinkOne.classList.add('share-scroll');
-            // sharelinkOne.classList.add('active-scroll');
-            
-            // shareScroll.classList.add('active-scroll')
-        }  
-    } else{
-        // shareScroll.style.position="relative";
-        // shareScroll.classList.add('animation-scroll');
-     }
+    } 
     if(scrollPosition >= externalOne.offsetTop - 700){
         shareScroll.classList.remove('active');
-        // shareScroll.style.position="relative";
-        // shareScroll.classList.add('animation-scroll');
+        shareScroll.classList.add('share-scroll-position');
     }
-   
 }
 
 window.addEventListener("scroll", addShareScrollBig);
-
-
-function addShareScrollClass() {
-  const scrollPosition = window.scrollY;
-  if (externalOne && scrollPosition <= externalOne.offsetTop - 700) {
-    sharelinkOne.classList.add("share-scroll");
-  } else if (sharelinkOne){
-    sharelinkOne.classList.remove("share-scroll");
-  }
-}
-// window.addEventListener("scroll", addShareScrollClass);
-
-
-const mobileHeight = document.querySelector('.share-link.share-scroll');
-function addShareScrollMobile() {
-    const scrollPosition = window.scrollY;
-    if(navigator.userAgent.indexOf("MObi") > -1){
-        mobileHeight.style.height = "55px"
-        if (externalOne && scrollPosition <= externalOne.offsetTop - 650) {
-            sharelinkOne.classList.add("share-scroll");
-            } else if (sharelinkOne){
-            sharelinkOne.classList.remove("share-scroll");
-        }
-    }
-  
-}
-// window.addEventListener("scroll", addShareScrollMobile);
-
-
-
-
-//// Create a function to check if the div is reached
-// function isDivReached() {
-//   /// Get the current scroll position
-//   const scrollPosition = window.scrollY;
-
-//   /// Check if the scroll position is greater than or equal to the top of the div
-//   return scrollPosition >= externalOne.offsetTop - 750;
-// }
-
-// ////Add an event listener to the window scroll event
-// window.addEventListener('scroll', function (e) {
-    // e.preventDefault();
-  // Check if the div is reached
-//   if (isDivReached()) {
-    // sharelinkOne.classList.add('share-java');
-//   }
-//   else {
-    // sharelinkOne.classList.remove('share-java');
-//   }
-// });
-
-
-// function Reached() {
-//     /// Get the current scroll position
-//     const scrollPosition = window.scrollY;
-
-//     /// Check if the scroll position is greater than or equal to the top of the div
-//     return scrollPosition <= externalOne.offsetTop;
-// }
-
-// ///// prevent scroll event
-// window.addEventListener('scroll', function (e) {
-//     if(Reached){
-//         sharelinkOne.classList.add("share-scroll");
-//     }
-// });
-
-// window.addEventListener('scroll', function (e) {
-//     const scrollPosition = window.pageYOffset;
-    
-//     if (scrollPosition <= externalOne.offsetTop - 798) { 
-//         sharelinkOne.classList.add('share-scroll');
-//     } else {
-//         sharelinkOne.classList.remove('share-scroll');
-//     }
-// });
-
-
-
-
-
-// const addSocial = new IntersectionObserver(callback =>{
-//     console.log(callback[0].isIntersecting);
-//     if(callback[0].isIntersecting){
-//         sharelinkOne.classList.add('share-scroll');
-//         addSocial.unobserve(sharelinkOne);
-//     }
-    
-// }, {
-//     root: null,
-//     rootMargin: "0px 0px -150px 0px",
-//     // threshold: 1
-// })
-
-// const addSocialss = new IntersectionObserver(callback =>{
-//     console.log(callback[0].isIntersecting);
-//     if(callback[0].isIntersecting){
-//         sharelinkOne.classList.remove('share-scroll');
-//         addSocial.unobserve(sharelinkOne);
-//     }
-// }, {
-//     root: null,
-//     rootMargin: "0px 0px -160px 0px",
-//     // threshold: 1
-// })
-// addSocialss.observe(sharelinkOne);
-
-
-
-
-
-
-
-
-
 
 
 
@@ -288,89 +157,144 @@ if(shareEl){
 
 
 /////show widget when mouseover icon
-// const likeMouseOver = document.querySelector('.share-like');
-// const commentMouseOver = document.querySelector('.share-comment');
-// const bookmarkMouseOver = document.querySelector('.share-bookmark');
-// const shareMouseOver = document.querySelector('.share-share');
-// const likePop = document.querySelector('.pop-like');
-// const commentPop = document.querySelector('.pop-comment');
-// const bookmarkPop = document.querySelector('.pop-bookmark');
-// const sharePop = document.querySelector('.pop-share');
+const likeMouseOver = document.querySelector('.share-like');
+const commentMouseOver = document.querySelector('.share-comment');
+const bookmarkMouseOver = document.querySelector('.share-bookmark');
+const shareMouseOver = document.querySelector('.share-share');
+const likePop = document.querySelector('.pop-like');
+const commentPop = document.querySelector('.pop-comment');
+const bookmarkPop = document.querySelector('.pop-bookmark');
+const sharePop = document.querySelector('.pop-share');
 
-// function showWidget() {
-//     likeMouseOver.addEventListener('mouseover', () =>{
+function showWidget() {
+    likeMouseOver.addEventListener('mouseover', () =>{
 
-//         setTimeout(() => {
-//             likePop.classList.add('alert-active');
-//         }, 10);
-//         likeMouseOver.addEventListener('mouseout', () =>{
-//             likePop.classList.remove('alert-active');
-//         })
-//     });
+        setTimeout(() => {
+            likePop.classList.add('alert-active');
+        }, 10);
+        likeMouseOver.addEventListener('mouseout', () =>{
+            likePop.classList.remove('alert-active');
+        })
+    });
 
-//     commentMouseOver.addEventListener('mouseover', () =>{
-//         setTimeout(() => {
-//             commentPop.classList.add('alert-active');
-//         }, 10);
-//         commentMouseOver.addEventListener('mouseout', () =>{
-//             commentPop.classList.remove('alert-active');
-//         })
-//     });
+    commentMouseOver.addEventListener('mouseover', () =>{
+        setTimeout(() => {
+            commentPop.classList.add('alert-active');
+        }, 10);
+        commentMouseOver.addEventListener('mouseout', () =>{
+            commentPop.classList.remove('alert-active');
+        })
+    });
 
-//     bookmarkMouseOver.addEventListener('mouseover', () =>{
-//         setTimeout(() => {
-//             bookmarkPop.classList.add('alert-active');
-//         }, 10);
-//         bookmarkMouseOver.addEventListener('mouseout', () =>{
-//             bookmarkPop.classList.remove('alert-active');
-//         })
-//     });
+    bookmarkMouseOver.addEventListener('mouseover', () =>{
+        setTimeout(() => {
+            bookmarkPop.classList.add('alert-active');
+        }, 10);
+        bookmarkMouseOver.addEventListener('mouseout', () =>{
+            bookmarkPop.classList.remove('alert-active');
+        })
+    });
 
-//     shareMouseOver.addEventListener('mouseover', () =>{
-//         setTimeout(() => {
-//             sharePop.classList.add('alert-active');
-//         }, 10);
-//         shareMouseOver.addEventListener('mouseout', () =>{
-//             sharePop.classList.remove('alert-active');
-//         })
-//     });
-// };
-// showWidget();
-
-
-// // copy permalink/url when user click permalink button
-// const permalinkEl = document.querySelector('.permalink');
-// const copyArticl = document.querySelector('.permalink-message');
+    shareMouseOver.addEventListener('mouseover', () =>{
+        setTimeout(() => {
+            sharePop.classList.add('alert-active');
+        }, 10);
+        shareMouseOver.addEventListener('mouseout', () =>{
+            sharePop.classList.remove('alert-active');
+        })
+    });
+};
+showWidget();
 
 
 
-// permalinkEl.addEventListener('click', (e) => {
-//     copyArticl.classList.add('show-permalink-message');
-//     e.preventDefault();
 
+// copy permalink/url when user click permalink button
+const button = document.querySelector('.permalink');
+const copyArticl = document.querySelector('.permalink-message');
 
-//     setTimeout(()=>{
-//         copyArticl.classList.remove('show-permalink-message');
-//     }, 1000)
-// })
+function permalinkShare(){
+    if(button){
+        button.addEventListener('click', (e) => {
 
+            e.preventDefault()
+            const url = window.location.href;
+            const copied = navigator.clipboard.writeText(url);
+        
+            if (copied) {
+                copyArticl.classList.add('show-permalink-message');
+                e.preventDefault();
+        
+                setTimeout(()=>{
+                    copyArticl.classList.remove('show-permalink-message');
+                }, 1500);
+            } 
+        });
+    };
+}
+permalinkShare();
 
 
 
 
 // const shareLinkElements = document.querySelector('.share-link');
-// const lists = document.querySelectorAll('.pop');
+const lists = document.querySelectorAll('.pop');
 
-// lists.forEach(list => {
-//     list.addEventListener('mouseover', (e) => {
-//         likePop.classList.add('alert-active');
-//         commentPop.classList.add('alert-active');
-//     })
+lists.forEach(list => {
+    list.addEventListener('mouseover', (e) => {
+        likePop.classList.add('alert-active');
+        commentPop.classList.add('alert-active');
+    })
 
-//     likeMouseOver.addEventListener('mouseout', () =>{
-//         likePop.classList.remove('alert-active');
-//     })
-// })
+    likeMouseOver.addEventListener('mouseout', () =>{
+        likePop.classList.remove('alert-active');
+    })
+})
+
+
+
+
+/*================= REDIRECT TO EXTERNAL SOCIAL APP ===================*/
+// Get all share buttons
+const shareButtons = document.querySelectorAll('.share-button');
+
+// Add click event listener to each button
+shareButtons.forEach(button => {
+   button.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Get the URL of the current page
+      const url = window.location.href;
+
+      // Get the social media platform from the button's class name
+      const platform = button.classList[1];
+
+      // Set the URL to share based on the social media platform
+      let shareUrl;
+      switch (platform) {
+         case 'facebook':
+         shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+         break;
+         case 'twitter':
+         shareUrl = `https://twitter.com/share?url=${encodeURIComponent(url)}`;
+         break;
+         case 'linkedin':
+         shareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`;
+         break;
+         case 'reddit':
+         shareUrl = `https://reddit.com/submit?url=${encodeURIComponent(url)}`;
+         break;
+         case 'whatsapp':
+         shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
+         break;
+      }
+
+      // Open a new window to share the URL
+      window.open(shareUrl, '_blank');
+   });
+});
+
+
 
 
 
