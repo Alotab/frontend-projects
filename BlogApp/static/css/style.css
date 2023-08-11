@@ -647,7 +647,6 @@ footer ul li a{
   gap: 6px;
   align-items: center;
   text-align: center;
-  /* color: #f1f1f1; */
 }
 .signarture i{
   font-size: 12px;
@@ -2156,20 +2155,15 @@ footer ul li a{
   position: relative;
   align-items: center;
   justify-content: center;
-  /* visibility: hidden; */
   visibility: visible;
 }
 .share-link{
-  /* background: #fff; */
   background: greenyellow;
   width: 300px;
- 
   height: 45px;
   -moz-box-align: center;
   font-size: 0.875rem;
-
   display: flex;
-  /* position: relative;   */
   position: fixed;
   align-items: center;
 
@@ -2179,47 +2173,37 @@ footer ul li a{
   transition: display 0.3s;
   /* visibility: visible; */
 }
+.share-scroll{
+  z-index: 9999;
+ background: var(--share-background);
+ width: 300px;
+ height: 45px;
+ display: flex;
+ align-items: center;
+ text-align: center;
+ /*bottom: 3%;  */
+
+ border-radius: 30px;
+ border: 0.5px solid rgb(194, 191, 191);
+ visibility: visible;
+ transition: .2s all;
+ transition-timing-function: ease-in;
+}
 .animation-scroll{
-  transition: .2s all;
-  transition-timing-function: ease-in;
+ transition: .2s all;
+ transition-timing-function: ease-in;
 }
 .active{
-  /* visibility: hidden; */
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(0 0 #0000),0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
-  position: fixed;
-  /* display: none; */
-  transition: .2s all;
-  transition-timing-function: ease-in;
-
-  bottom: 40px;
+ --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
+ --tw-shadow-colored: 0 20px 25px -5px var(0 0 #0000),0 8px 10px -6px var(--tw-shadow-color);
+ box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+ position: fixed;
+ transition: .2s all;
+ transition-timing-function: ease-in;
+ bottom: 40px;
 }
 .share-scroll-position{
   position: relative;
-}
-.share-scroll{
-  z-index: 9999;
-  background: #fff;
-  width: 300px;
-  height: 49px;
-  display: flex;
-  
-  /* position: fixed; */
-  align-items: center;
-  text-align: center;
-
-  /* display: none !important;  */
-  /* bottom: 3%; */
-  border-radius: 30px;
-  border: 1px solid rgb(194, 191, 191);
-
-  /* display: none; */
-  visibility: visible;
-  transition: .2s all;
-  transition-timing-function: ease-in;
-
-  
 }
 .social-share{
   border-right: 1px solid rgba(199, 195, 195, 0.4);

@@ -79,7 +79,119 @@
             <!-- </div> -->
         </header>
 
+
         <div class="main-detail-post">
+            <div class="detail-column">
+                <div class="detail-post">
+                    <img src="images/author.jpg" alt="post-image" class="post-image">
+                    <div class="main-post">
+                        <div class="main-post-author">
+                            <img src="images/author.jpg" alt="author-image">
+                            <div class="author-name">
+                                <p class="author-name-link">Billy Hewlett</p>
+                                <p class="date">Posted on Dec 25</p>
+                            </div>
+                           
+                            <div class="post-edit">
+                                <a href="{% url 'blog:post-update' post.slug post.pk %}">Update</a>
+                            </div>
+                            <div class="post-delete">
+                                <a href="{% url 'blog:post-delete' post.slug post.pk %}">Delete</a>
+                            </div>
+                        
+                        </div>
+                        <div class="main-post-headline">
+                            <h2>Exponentiation in JavaScript: A Beginner's Guide</h2>
+                        </div>
+                        <div class="main-post-tags">
+                            <!-- <button><span id="tag-color"></span>{{ tag }}</button> -->
+                          
+                        </div>
+                        <div class="post-main-detail ">
+                            <p>Exponentiation refers to a mathematical process of multiplying a number by itself, raised to the power of another number.</p>
+                       
+                            <p>If, for instance, we raise 2 to the power of 3, we calculate it as 2 * 2 * 2, which gives us the result of 8.</p>
+                     
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolores dignissimos asperiores, magnam facere quos voluptas nam adipisci aliquid cupiditate mollitia quo modi ut commodi eius labore sit culpa, veniam optio! Assumenda hic officiis dolorum minima doloribus beatae, ratione sequi nihil? Soluta consequuntur ut odio impedit beatae nesciunt quod autem nulla? Dolorum est delectus eveniet architecto quasi blanditiis totam, voluptatum assumenda. Ab excepturi ipsum expedita quaerat mollitia nisi similique, quo magnam molestiae quos, eveniet totam voluptatum hic dicta modi velit.
+                            </p>
+                            <p>
+                                Fascinatingly, all of these developments are interconnected, with each breakthrough leading to another and another, creating a domino effect that has transformed our world.
+                            
+                                Admiringly, the innovators of this era were truly extreme, pushing the boundaries of what was thought possible and setting the stage for future advancements that we continue to benefit from today.
+                            
+                                Charmingly, women played a prominent role in the field of computer science during this time, but their representation has decreased since then, making it all the more important to recognize their contributions and support gender diversity in tech.
+                            
+                                Curiously, computer scientists back then were essentially mathematicians working with monstrous machines to solve complex problems, with a focus on math rather than technology itself.
+                            
+                                Amusingly, these early computers took up entire rooms and required large teams to operate, highlighting the significant resources needed to make technology work at that time.
+                            
+                                Oddly, most of these computers were programmed using physical controls, as there were no high-level programming languages back then (first half of the 20th century), and programming methods were much more costly and exhausting compared to today's programming methods.
+                            
+                                Seriously, without the code-breaking work during WWII, we may have been living in a very different world today, with a dark alternate history that the TV series "The Man in the High Castle" offers a glimpse of.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!--===================== external- share ===============================-->
+            <div class="external-share-container">
+                
+                <div class="share-scroll share-scroll-position">
+                    <div class="social-share">
+                        <i class="ri-heart-line share-like pop"></i>
+                        <div class="like-count"></div>
+                        <p class="pop-like kat">Like this article</p>
+                    </div>
+                    <div class="social-share">
+                        <i class="ri-message-3-line share-comment pop"></i>
+                        <div class="comment-count"></div>
+                        <p class="pop-comment kat">Write a comment</p>
+                    </div>
+                    <div class="social-share">
+                        <i class="ri-bookmark-line share-bookmark pop"></i>
+                        <p class="pop-bookmark kat">Add Bookmark</p>
+                    </div>
+                    <div class="social-share">
+                        <i class="ri-share-line share-share pop"></i>
+                        <p class="pop-share kat">Share this article</p>
+                    </div>
+                    
+                   <div class="social-scroll-wrapper">
+                        <div class="social-cs9 share-buttons">
+                            <a href="#" class="share-button reddit">
+                                <i class="ri-reddit-fill"></i><p>Reddit</p>
+                            </a>
+                            <a href="#" class="share-button linkedin">
+                                <i class="ri-linkedin-box-fill"></i><p>Linkedin</p>
+                            </a>
+                            <a href="#" class="share-button twitch">
+                                <i class="ri-twitch-fill"></i><p>Twitch</p>
+                            </a>
+                            <a href="#" class="share-button whatsapp">
+                                <i class="ri-whatsapp-fill"></i><p>Whatsapp</p>
+                            </a>
+                            <a href="#" class="share-button facebook">
+                                <i class="ri-facebook-circle-fill"></i> <p>Facebook</p>
+                            </a>
+                            <a class="share-button twitter" href="#">
+                                <i class="ri-twitter-fill"></i><p>Twitter</p>
+                            </a>
+                            <a href="#" class="permalink">
+                                <i class="ri-links-line"></i><p>Permalink</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="permalink-message">
+                        <i class="ri-checkbox-circle-line"></i>
+                        <p>Copied article link</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="main-detail-post">
             <div class="detail-column">
                 <div class="detail-post">
                     <img src="images/author.jpg" alt="post-image" class="post-image">
@@ -131,10 +243,10 @@
 
             </div>
         </div>
-        <!---------------- external- share ------------------------>
+        
         <div class="external-share-container">
             
-            <div class="share-scroll share-scroll-position">   <!-- share-link  -->
+            <div class="share-scroll share-scroll-position">
                 <div class="social-share">
                     <i class="ri-heart-line share-like pop"></i>
                     <div class="like-count"></div>
@@ -184,143 +296,8 @@
                     <p>Copied article link</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-
-                <!--- user post comment online -->
-                <!-- <div class="main-post-comments">
-                    <span class="title">Comments</span>
-                    <div class="comments">
-              
-                        <div class="comment-container">
-                            <div class="user">
-                            <div class="user-pic">
-                                <svg fill="none" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linejoin="round" fill="#707277" stroke-linecap="round" stroke-width="2" stroke="#707277" d="M6.57757 15.4816C5.1628 16.324 1.45336 18.0441 3.71266 20.1966C4.81631 21.248 6.04549 22 7.59087 22H16.4091C17.9545 22 19.1837 21.248 20.2873 20.1966C22.5466 18.0441 18.8372 16.324 17.4224 15.4816C14.1048 13.5061 9.89519 13.5061 6.57757 15.4816Z"></path>
-                                <path stroke-width="2" fill="#707277" stroke="#707277" d="M16.5 6.5C16.5 8.98528 14.4853 11 12 11C9.51472 11 7.5 8.98528 7.5 6.5C7.5 4.01472 9.51472 2 12 2C14.4853 2 16.5 4.01472 16.5 6.5Z"></path>
-                                </svg>
-                            </div>
-                            <div class="user-info">
-                                <span>Ethan Zanina</span>
-                                <p>March 13</p>
-                            </div>
-                            </div>
-                            <p class="comment-content">
-                            I've been using this product for a few days now and I'm really impressed! The interface is intuitive and easy to
-                            use, and the features are exactly what I need to streamline my workflow.
-                            </p>
-                        </div>
-
-                        <div class="comment-container">
-                            <div class="user">
-                            <div class="user-pic">
-                                <svg fill="none" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linejoin="round" fill="#707277" stroke-linecap="round" stroke-width="2" stroke="#707277" d="M6.57757 15.4816C5.1628 16.324 1.45336 18.0441 3.71266 20.1966C4.81631 21.248 6.04549 22 7.59087 22H16.4091C17.9545 22 19.1837 21.248 20.2873 20.1966C22.5466 18.0441 18.8372 16.324 17.4224 15.4816C14.1048 13.5061 9.89519 13.5061 6.57757 15.4816Z"></path>
-                                <path stroke-width="2" fill="#707277" stroke="#707277" d="M16.5 6.5C16.5 8.98528 14.4853 11 12 11C9.51472 11 7.5 8.98528 7.5 6.5C7.5 4.01472 9.51472 2 12 2C14.4853 2 16.5 4.01472 16.5 6.5Z"></path>
-                                </svg>
-                            </div>
-                            <div class="user-info">
-                                <span>Ethan Zanina</span>
-                                <p>March 13</p>
-                            </div>
-                            </div>
-                            <p class="comment-content">
-                            I've been using this product for a few days now and I'm really impressed! The interface is intuitive and easy to
-                            use, and the features are exactly what I need to streamline my workflow.
-                            </p>
-                        </div>
-                    </div>
-                  
-                    <div class="text-box">
-                      <div class="box-container">
-                        <textarea placeholder="Reply"></textarea>
-                        <div>
-                          <div class="formatting">
-                     
-
-                            <button type="submit" class="send" title="Send">
-                              <svg fill="none" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#ffffff" d="M12 5L12 20"></path>
-                                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#ffffff" d="M7 9L11.2929 4.70711C11.6262 4.37377 11.7929 4.20711 12 4.20711C12.2071 4.20711 12.3738 4.37377 12.7071 4.70711L17 9"></path>
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </div> -->
-            <!-- </div> -->
-
-            <!-- <div class="sidebar-column" style="margin-top: 20rem;"> -->
-                <!-- <div class="related-side-post">
-                    <h3>Related Post</h3>
-
-                    <button class="related-post">
-                        <a href="">
-                            <img src="images/author.jpg" alt="author-image">
-                            <div class="related-post-headline">
-                                <h2>How to work with Docker and Improve your Skills Python Docker and Kubernates</h2>
-                                <div class="related-post-author-date">
-                                    <p class="related-author">Jose Paboss</p>
-                                    <p class="related-date">May 24</p>
-                                </div>
-                            </div>
-                        </a>
-                    </button>
-                </div> -->
-
-
-                <!-- <div class="trending-side-post">
-                    <h3>Trending Post</h3>
-               
-                    <button class="trending-post">
-                        <a href="porfolio.html"><img src="images/author.jpg" alt="author-image"></a>
-                        
-                        <div class="trending-post-headline">
-                            <a href="#">
-                                <h2>How to work with Docker and Improve your Skills, Kubernates, docker and github</h2>
-                                <div class="trending-post-author-date">
-                                    <p class="trending-author">Jose Paboss</p>
-                                    <p class="trending-date">May 24</p>
-                                </div>
-                            </a>
-                           
-                        </div>
-                    </button> 
-
-                    <button class="trending-post">
-                        <a href="porfolio.html"><img src="images/author.jpg" alt="author-image"></a>
-                        
-                        <div class="trending-post-headline">
-                            <a href="#">
-                                <h2>How to work with Docker and Improve your Skills</h2>
-                                <div class="trending-post-author-date">
-                                    <p class="trending-author">Jose Paboss</p>
-                                    <p class="trending-date">May 24</p>
-                                </div>
-                            </a>
-                           
-                        </div>
-                    </button>
-
-                    <button class="trending-post">
-                        <a href="porfolio.html"><img src="images/author.jpg" alt="author-image"></a>
-                        
-                        <div class="trending-post-headline">
-                            <a href="#">
-                                <h2>How to work with Docker and Improve your Skills</h2>
-                                <div class="trending-post-author-date">
-                                    <p class="trending-author">Jose Paboss</p>
-                                    <p class="trending-date">May 24</p>
-                                </div>
-                            </a>
-                           
-                        </div>
-                    </button>
-                </div> -->
-            <!-- </div> -->
-            
-        <!-- </div> -->
         
     </div>
 
@@ -351,3 +328,12 @@
    
 </body>
 </html>
+
+
+
+
+
+
+
+
+   
