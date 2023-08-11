@@ -1,23 +1,22 @@
+import "https://flackr.github.io/scroll-timeline//dist/scroll-timeline.js";
+
+/*====================== GLOBAL VARIABLES ========================*/
+var windowWidth = window.innerWidth;
+var ipadMaxWidth = 768;
+let mobileMaxWidth = 480;
+
+
+
 /*============ SHOW MENU =================== */
 const primaryNav = document.querySelector('.primary-navigation');
 const navToggleMobile = document.querySelector('.mobile-nav-toggle');
 const navCloseToggle = document.querySelector('.mobile-nav-toggle-close');
 
-
-//document.querySelector('#element').style.display = 'none';  bard
-const elSearcIcon = document.querySelector('.search-icon')
-const elSearchMenu = document.querySelector('.middle-colume-search')
-
-// variables for chatbot 
-const chatInput = document.querySelector(".chat-input textarea");
-const sendChatBtn = document.querySelector(".chat-input span");
-const chatbox = document.querySelector(".chatbox");
-const chatBotToggler = document.querySelector(".chatbot-toggler");
-const chatbotCloseBtn = document.querySelector(".close-btn");
+const elSearcIcon = document.querySelector('.search-icon');
+const elSearchMenu = document.querySelector('.middle-colume-search');
 
 
-
-/*============ middle search bar =================*/
+/*============== middle search bar =====================*/
 if(elSearcIcon){
     elSearcIcon.addEventListener('click', ()=>{
         elSearchMenu.classList.add('middle-search');
@@ -25,30 +24,73 @@ if(elSearcIcon){
 }
 
 
-/*========== Hambuger Menu for small devices =============*/
+/*============== scroll tracker =====================*/
+const scrollTracker = document.querySelector('.scroll-tracker');
+
+const scrollTrackingTimeline = new ScrollTimeline({
+    // by default source is the entire viewpower for the scorlling elmenet
+    source: document.scrollingElement, 
+    //for up/down (block) scrolling and horizontall scorlling
+    orientation: "block", 
+    //scrolling range /starting point and end point
+    scrollOffsets: [CSS.percent(0), CSS.percent(120)]
+});
+
+scrollTracker.animate(
+    {
+        transform: ["scaleX(0", "scale(1"],
+    },
+    {
+        duration: 1,
+        timeline: scrollTrackingTimeline,
+    }
+);
+
+
+/*=============== Hambuger Menu for small devices =================*/
+
+// prevent and enable scrolling when hambuger menu is clicked
+function disableScroll() {
+    // Get the current page scroll position
+    // var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+  
+        // if any scroll is attempted, set this to the previous value
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+}
+function enableScroll() {
+    window.onscroll = function() {};
+}  
+
 navToggleMobile.addEventListener('click', () => {
     const visibility = primaryNav.getAttribute('data-visible');
     // const hamMenuVisibility = navToggleMobile.getAttribute('data-visible');
     // const closeMenuVisiblity =  navCloseToggle.getAttribute('data-visible');
-    disableScroll() 
+   
+    // Get the window object.
+    var window = window;
+
+    disableScroll();
     if(visibility === "false"){
         primaryNav.setAttribute('data-visible', true);
         navToggleMobile.setAttribute('aria-expanded', true);
         navCloseToggle.setAttribute('aria-expanded', true);
     } 
 });
-
 navCloseToggle.addEventListener('click', () => {
     const visibility = primaryNav.getAttribute('data-visible');
 
-    enableScroll()
+    enableScroll();
     if(visibility === 'true'){
         navCloseToggle.setAttribute('aria-expanded', false);
         primaryNav.setAttribute('data-visible', false);  
         navToggleMobile.setAttribute('aria-expanded', false);
     }
 });
-
 function preventScrolling() {
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('mobile-nav-toggle')) {
@@ -61,102 +103,123 @@ function preventScrolling() {
 }
 window.onload = preventScrolling;
 
-// prevent and enable scrolling when hambuger menu is clicked
-function disableScroll() {
-    // Get the current page scroll position
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-  
-        // if any scroll is attempted, set this to the previous value
-        window.onscroll = function() {
-            window.scrollTo(scrollLeft, scrollTop);
-        };
-}
-
-function enableScroll() {
-    window.onscroll = function() {};
-}  
-
-
 
 /*=============== EXTERNAL LINK SCREEN  ===============*/
-// const detailImage = document.querySelector(".post-image");
-const sharelinkOne = document.querySelector(".share-link");
+const detailImage = document.querySelector(".post-image");
 const postdetailOne = document.querySelector(".post-main-detail");
+
 const externalOne = document.querySelector(".external-share-container");
-const shareScroll = document.querySelector('.share-scroll');
+const sharelinkOne = document.querySelector(".share-link");
+const shareScroll = document.querySelector(".share-scroll");
+const foot = document.querySelector('footer');
+const footer = document.querySelector(".main-detail-post");
 
 
-let isAlive = false;
+    
 function addShareScrollBig(){
     const scrollPosition = window.scrollY;
-    // scrollPosition <= externalOne.offsetTop - 699  desktop  // Small screens, laptops //  
-    //  700 Mini Ipads / some large mobile devices 
-    //  730 large desktop
-    if(scrollPosition <= externalOne.offsetTop - 700){
-        shareScroll.classList.add('active');
-        shareScroll.classList.remove('share-scroll-position');
-        // shareScroll.style.position="fixed";
-        // shareScroll.style.background="pink";
-    } 
-    if(scrollPosition >= externalOne.offsetTop - 700){
-        shareScroll.classList.remove('active');
-        shareScroll.classList.add('share-scroll-position');
+    
+
+    //// Triggers when the Bottom toolbar is visible
+    if(foot){
+        if(windowWidth <= mobileMaxWidth && scrollPosition <= foot.offsetTop - 650){
+            shareScroll.classList.add('active');
+            shareScroll.classList.remove('share-scroll-position');
+        }
+        if(windowWidth <= mobileMaxWidth && scrollPosition >= foot.offsetTop - 650){
+            shareScroll.classList.remove('active');
+            shareScroll.classList.add('share-scroll-position');
+        } 
     }
+   
+   
+    /// Triggers on Desktop
+    // const shareBoxOffset = externalOne.offsetTop;
+    // scrollPosition <= foot.offsetTop - 700
+    // scrollPosition <= shareBoxOffset - 700
+    if(externalOne){
+        const shareBoxOffset = externalOne.offsetTop;
+        if(scrollPosition <= shareBoxOffset - 700){
+            shareScroll.classList.add('active');
+            shareScroll.classList.remove('share-scroll-position');
+        }
+        
+        if(scrollPosition >= shareBoxOffset - 700){
+            shareScroll.classList.remove('active');
+            shareScroll.classList.add('share-scroll-position');
+        }
+    }
+    
+  
+  
+
+    /// Triggers when Mobile Bottom Toolbar is Invincible. Use if possible for mobile defualt: cry:>
+    if(externalOne){
+        if(windowWidth <= ipadMaxWidth && scrollPosition <= externalOne.offsetTop - 630){
+            shareScroll.classList.add('active');
+            shareScroll.classList.remove('share-scroll-position');
+        }
+        
+        if(windowWidth <= ipadMaxWidth && scrollPosition >= externalOne.offsetTop - 630){
+            shareScroll.classList.remove('active');
+            shareScroll.classList.add('share-scroll-position');
+        }
+    }
+ 
 }
 
 window.addEventListener("scroll", addShareScrollBig);
 
 
 
+
+
+
 /*=============== POPUP SHARE LIKE SCREEN ===============*/
 const shareEl = document.querySelector('.share-share');
+const removeMouse = document.querySelectorAll('.social-share i');
 const socialContainerEl = document.querySelector('.social-scroll-wrapper');
 const hidePopupWidget = document.querySelector('.kat');
 
 
-
-// function noscrolling(){
-//     shareEl.addEventListener('click', () => {
-//         isSocialLinks = !isSocialLinks;
-    
-//         socialContainerEl.classList.toggle('show-social-links');
-      
-//             // document.body.classList.add('no-scroll');s
-    
-//     });
-//     document.addEventListener('click', (e) => {
-//         if (!socialContainerEl.contains(e.target) && !shareEl.contains(e.target)) {
-//             // socialContainerEl.classList.remove('show-social-links');
-//         }
-//     });
-// }
-
 let showMes = false;
 // var showWidget = true;
-if(shareEl){
-    shareEl.addEventListener('click', () => {
-        socialContainerEl.classList.add('show-social-links');
-        likePop.classList.remove('alert-active');
-        
-        showMes = true;
-        if(showMes){
-            document.body.style.overflow = 'hidden';
+
+function popShareScreen(){
+    if(shareEl){
+        shareEl.addEventListener('click', () => {
+            socialContainerEl.classList.add('show-social-links');
+            likePop.classList.remove('alert-active');
+            removeMouse.forEach((icon) => {
+                icon.style.cursor = 'default';
+            });
             
-        }
-    
-        document.addEventListener('click', (e) => {
-            if (!socialContainerEl.contains(e.target) && !shareEl.contains(e.target)) {
-                socialContainerEl.classList.remove('show-social-links');
-                document.body.style.overflow = 'auto';
-              
+            showMes = true;
+            if(showMes){
+                document.body.style.overflow = 'hidden';
             }
-        });    
-    });
-}
+        
+            document.addEventListener('mousedown', (e) => {
+                if (!socialContainerEl.contains(e.target) && !shareEl.contains(e.target)) {
+                    socialContainerEl.classList.remove('show-social-links');
+                    document.body.style.overflow = 'auto';
+
+                    removeMouse.forEach((icon) => {
+                        icon.style.setProperty('cursor', "pointer", "important");
+                    });
+                  
+                }
+            });    
+        });
+    }
+};
+popShareScreen();
 
 
-/////show widget when mouseover icon
+
+
+
+
 const likeMouseOver = document.querySelector('.share-like');
 const commentMouseOver = document.querySelector('.share-comment');
 const bookmarkMouseOver = document.querySelector('.share-bookmark');
@@ -166,91 +229,121 @@ const commentPop = document.querySelector('.pop-comment');
 const bookmarkPop = document.querySelector('.pop-bookmark');
 const sharePop = document.querySelector('.pop-share');
 
-function showWidget() {
-    likeMouseOver.addEventListener('mouseover', () =>{
 
-        setTimeout(() => {
-            likePop.classList.add('alert-active');
-        }, 10);
-        likeMouseOver.addEventListener('mouseout', () =>{
-            likePop.classList.remove('alert-active');
-        })
-    });
+// show widget on Large Screen or Desktop where mouseOver works
+function desktopWidget() {
+    if(likeMouseOver) {
+        likeMouseOver.addEventListener('mouseover', () =>{
 
-    commentMouseOver.addEventListener('mouseover', () =>{
-        setTimeout(() => {
-            commentPop.classList.add('alert-active');
-        }, 10);
-        commentMouseOver.addEventListener('mouseout', () =>{
-            commentPop.classList.remove('alert-active');
-        })
-    });
-
-    bookmarkMouseOver.addEventListener('mouseover', () =>{
-        setTimeout(() => {
-            bookmarkPop.classList.add('alert-active');
-        }, 10);
-        bookmarkMouseOver.addEventListener('mouseout', () =>{
-            bookmarkPop.classList.remove('alert-active');
-        })
-    });
-
-    shareMouseOver.addEventListener('mouseover', () =>{
-        setTimeout(() => {
-            sharePop.classList.add('alert-active');
-        }, 10);
-        shareMouseOver.addEventListener('mouseout', () =>{
-            sharePop.classList.remove('alert-active');
-        })
-    });
-};
-showWidget();
-
-
-
-
-// copy permalink/url when user click permalink button
-const button = document.querySelector('.permalink');
-const copyArticl = document.querySelector('.permalink-message');
-
-function permalinkShare(){
-    if(button){
-        button.addEventListener('click', (e) => {
-
-            e.preventDefault()
-            const url = window.location.href;
-            const copied = navigator.clipboard.writeText(url);
-        
-            if (copied) {
-                copyArticl.classList.add('show-permalink-message');
-                e.preventDefault();
-        
-                setTimeout(()=>{
-                    copyArticl.classList.remove('show-permalink-message');
-                }, 1500);
-            } 
+            setTimeout(() => {
+                likePop.classList.add('alert-active');
+            }, 10);
+            likeMouseOver.addEventListener('mouseout', () =>{
+                likePop.classList.remove('alert-active');
+            })
         });
-    };
+    }
+
+    if(commentMouseOver){
+        commentMouseOver.addEventListener('mouseover', () =>{
+            setTimeout(() => {
+                commentPop.classList.add('alert-active');
+            }, 10);
+            commentMouseOver.addEventListener('mouseout', () =>{
+                commentPop.classList.remove('alert-active');
+            })
+        });
+    }
+    if(bookmarkMouseOver){
+        bookmarkMouseOver.addEventListener('mouseover', () =>{
+            setTimeout(() => {
+                bookmarkPop.classList.add('alert-active');
+            }, 10);
+            bookmarkMouseOver.addEventListener('mouseout', () =>{
+                bookmarkPop.classList.remove('alert-active');
+            })
+        });
+    }
+    if(shareMouseOver){
+        shareMouseOver.addEventListener('mouseover', () =>{
+            setTimeout(() => {
+                sharePop.classList.add('alert-active');
+            }, 10);
+            shareMouseOver.addEventListener('mouseout', () =>{
+                sharePop.classList.remove('alert-active');
+            })
+        });
+    }
+};
+
+if(windowWidth >= ipadMaxWidth + 10){
+    desktopWidget();
 }
-permalinkShare();
+
+// show widget on mobile or Tablet where mouseOver works
+// var ipadMaxWidth = 768;
+// let mobileMaxWidth = 480;
+
+const removeHover = document.querySelector('.social-share i');
+
+function mobileTabletWidget() {
+    if(likeMouseOver){
+        likeMouseOver.addEventListener('touchstart', (e) =>{
+            $(removeHover).removeClass('hover');
+            likePop.classList.add('alert-active');
+            
+            setTimeout(() => {
+                likePop.classList.remove('alert-active');
+            }, 900);
+        })
+    }
+    if(commentMouseOver){
+        commentMouseOver.addEventListener('touchstart', () =>{
+             $(removeHover).removeClass('hover');
+            commentPop.classList.add('alert-active');
+            setTimeout(() => {
+                commentPop.classList.remove('alert-active');
+            }, 900);
+        });
+    }
+    if(bookmarkMouseOver){
+        bookmarkMouseOver.addEventListener('touchstart', () =>{
+            bookmarkPop.classList.add('alert-active');
+            setTimeout(() => {
+                bookmarkPop.classList.remove('alert-active');
+            }, 900);
+        });
+    }
+    if(shareMouseOver){
+        shareMouseOver.addEventListener('touchstart', () =>{
+            sharePop.classList.add('alert-active');
+            setTimeout(() => {
+                sharePop.classList.remove('alert-active');
+            }, 900);
+        });
+    }
+    
+}
+
+if(windowWidth <= mobileMaxWidth){
+    mobileTabletWidget();
+}
 
 
 
 
-// const shareLinkElements = document.querySelector('.share-link');
-const lists = document.querySelectorAll('.pop');
-
-lists.forEach(list => {
-    list.addEventListener('mouseover', (e) => {
-        likePop.classList.add('alert-active');
-        commentPop.classList.add('alert-active');
-    })
-
-    likeMouseOver.addEventListener('mouseout', () =>{
-        likePop.classList.remove('alert-active');
-    })
-})
-
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400
+});
+sr.reveal(`.home__data, .footer__container, .footer__group`);
+sr.reveal(`.portfolio-container, .portfolio-card`, {delay: 700, origin: 'bottom'});
+sr.reveal(`.portfolio-container, .portfolio-card`, {interval: 100});
+sr.reveal(`.my-profile-introduction`, {origin: 'left'});
+sr.reveal(`.my-profile-image`, {origin: 'right'});
 
 
 
@@ -294,29 +387,73 @@ shareButtons.forEach(button => {
    });
 });
 
+// copy permalink/url when user click permalink button
+const button = document.querySelector('.permalink');
+const copyArticl = document.querySelector('.permalink-message');
+
+function permalinkShare(){
+    if(button){
+        button.addEventListener('click', (e) => {
+
+            e.preventDefault()
+            const url = window.location.href;
+            const copied = navigator.clipboard.writeText(url);
+        
+            if (copied) {
+                copyArticl.classList.add('show-permalink-message');
+                e.preventDefault();
+        
+                setTimeout(()=>{
+                    copyArticl.classList.remove('show-permalink-message');
+                }, 1500);
+            } 
+        });
+    };
+}
+permalinkShare();
+
+/*========================= DARK MODE =======================   activate-mode */
+const setDarkEl = document.querySelector('.darkmode-setup');
+const setSunsetEl = document.querySelector('.sunset-setup');
+// const darkModeToggler = document.querySelector('.darkmode-set');
+
+setDarkEl.addEventListener('click', () => {
+    if(setDarkEl){
+        setDarkEl.setAttribute('aria-expanded', true);
+        setSunsetEl.setAttribute('aria-expanded', true);
+        document.body.classList.toggle("dark-mode-theme");
 
 
+        //update the local storage when user click on the button
+        if(localStorage.getItem("theme") == "light"){
+            localStorage.setItem("theme", "dark");
+        } else{
+            localStorage.setItem("theme", "light");
+        }
+    }
+});
+
+setSunsetEl.addEventListener('click', () => {
+    if(setSunsetEl){
+        setSunsetEl.setAttribute('aria-expanded', false);
+        setDarkEl.setAttribute('aria-expanded', false);
+        document.body.classList.remove("dark-mode-theme");
+
+        //update the local storage when user click on the button
+        if(localStorage.getItem("theme") == "dark"){
+            localStorage.setItem("theme", "light");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    }
+});
 
 
-
-
-
-
-
-
-
-
-
-
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2500,
-    delay: 400
-})
-sr.reveal(`.home__data, .footer__container, .footer__group`);
-sr.reveal(`.portfolio-container, .portfolio-card`, {delay: 700, origin: 'bottom'});
-sr.reveal(`.portfolio-container, .portfolio-card`, {interval: 100});
-sr.reveal(`.my-profile-introduction`, {origin: 'left'});
-sr.reveal(`.my-profile-image`, {origin: 'right'})
+if(localStorage.getItem("theme") == "light"){
+    document.body.classList.remove("dark-mode-theme");
+} else if(localStorage.getItem("theme") == "dark"){
+    document.body.classList.add("dark-mode-theme");
+} else {
+    // execute when a user first the website for the first time
+    localStorage.setItem("theme", "light");
+};

@@ -643,7 +643,17 @@ footer ul li a{
   font-weight: 300;
   font-size: 12px;
   margin-top: 1.5rem;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  text-align: center;
   /* color: #f1f1f1; */
+}
+.signarture i{
+  font-size: 12px;
+  text-align: center;
+  align-items: center;
+  color: red;
 }
   
   /*========================= Create Post ====================*/
@@ -2175,6 +2185,9 @@ footer ul li a{
 }
 .active{
   /* visibility: hidden; */
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(0 0 #0000),0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
   position: fixed;
   /* display: none; */
   transition: .2s all;
@@ -2186,7 +2199,7 @@ footer ul li a{
   position: relative;
 }
 .share-scroll{
-  z-index: 999999;
+  z-index: 9999;
   background: #fff;
   width: 300px;
   height: 49px;
@@ -2200,9 +2213,7 @@ footer ul li a{
   /* bottom: 3%; */
   border-radius: 30px;
   border: 1px solid rgb(194, 191, 191);
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(0 0 #0000),0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+
   /* display: none; */
   visibility: visible;
   transition: .2s all;
@@ -2219,6 +2230,7 @@ footer ul li a{
   text-align: center;
   flex-basis: 25%;
   position: relative;
+  z-index: 1000000;
 }
 .social-share:nth-child(4){
   border-right: none;
@@ -2591,7 +2603,6 @@ footer ul li a{
     margin-left: 0px;
   }
 
-
   .search-list{
     display: flex;
     /* flex-direction: column; */
@@ -2882,6 +2893,7 @@ footer ul li a{
   .permalink-message{
     right: -230px;
   }
+
 
 }
   
@@ -3517,7 +3529,7 @@ footer ul li a{
   .main-detail-post{
     display: inline-block;
     /* padding: 7rem 1rem; */
-    padding: 7rem 1rem 0rem 1rem;
+    padding: 7rem 0rem 0rem 0rem;
     width: 100%;
   }
   .author-name .date{
@@ -3538,6 +3550,7 @@ footer ul li a{
 
   .detail-post .post-image{
     height: 30rem;
+    width: 100%;
     /* width: 100px; */
     /* width: 100% */
     /* object-fit: cover;
@@ -3549,6 +3562,8 @@ footer ul li a{
     font-size: 2.8rem;
     letter-spacing: 0;
     line-height: 1.4;
+    text-align: center;
+    overflow-wrap: break-word;
     
   }
   .post-main-detail p {
