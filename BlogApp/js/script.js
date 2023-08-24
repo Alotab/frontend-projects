@@ -119,14 +119,19 @@ const footer = document.querySelector(".main-detail-post");
 function addShareScrollBig(){
     const scrollPosition = window.scrollY;
     
-
-    //// Triggers when the Bottom toolbar is visible
+// scrollPosition >= 130
+    //// Triggers when the Bottom toolbar is visible on mobile
     if(foot){
+        // if(windowWidth <= mobileMaxWidth && scrollPosition >= 130){
+        //     shareScroll.classList.add('active');
+        //     // shareScroll.style.backgroundColor = "red";
+        //     shareScroll.classList.remove('share-scroll-position');
+        // }
         if(windowWidth <= mobileMaxWidth && scrollPosition <= foot.offsetTop - 650){
             shareScroll.classList.add('active');
             shareScroll.classList.remove('share-scroll-position');
         }
-        if(windowWidth <= mobileMaxWidth && scrollPosition >= foot.offsetTop - 650){
+        if(windowWidth <= mobileMaxWidth && scrollPosition >= foot.offsetTop - 650 || scrollPosition <= 130){
             shareScroll.classList.remove('active');
             shareScroll.classList.add('share-scroll-position');
         } 
@@ -144,7 +149,7 @@ function addShareScrollBig(){
             shareScroll.classList.remove('share-scroll-position');
         }
         
-        if(scrollPosition >= shareBoxOffset - 700){
+        if(scrollPosition >= shareBoxOffset - 700 || scrollPosition <= 130){
             shareScroll.classList.remove('active');
             shareScroll.classList.add('share-scroll-position');
         }
@@ -155,12 +160,15 @@ function addShareScrollBig(){
 
     /// Triggers when Mobile Bottom Toolbar is Invincible. Use if possible for mobile defualt: cry:>
     if(externalOne){
+        if(windowWidth <= ipadMaxWidth && scrollPosition >= externalOne.offsetTop){
+            shareScroll.classList.remove('share-scroll-position');
+        }
         if(windowWidth <= ipadMaxWidth && scrollPosition <= externalOne.offsetTop - 630){
             shareScroll.classList.add('active');
             shareScroll.classList.remove('share-scroll-position');
         }
         
-        if(windowWidth <= ipadMaxWidth && scrollPosition >= externalOne.offsetTop - 630){
+        if(windowWidth <= ipadMaxWidth && scrollPosition >= externalOne.offsetTop - 630 || scrollPosition <= 130){
             shareScroll.classList.remove('active');
             shareScroll.classList.add('share-scroll-position');
         }
