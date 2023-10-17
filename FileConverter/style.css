@@ -329,36 +329,103 @@ input[type="file"] {
    flex-direction: column-reverse;
 }
 .addfiles-Todo ul li{
-    position: relative;
-    width: 80%;
+    
+    width: 100%;
     list-style: none;
     text-decoration: none;
     background-color: rgb(255, 255, 255);
+    /* background-color: blue; */
     margin-bottom: 9px;
-    display: flex;
+    
     padding: 0.3rem 1rem;
-    justify-content: space-between;
-    /* width: ; */
+    
     align-items: center;
-    color: #0d1117;
-    /* border: 1px solid gray; */
+    /* color: #0d1117; */
     border-radius: 0.3rem;
     margin-left: 4rem;
-   
-   
+
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    
 }
 .addfiles-Todo ul li p{
     /* background-color: #f33; */
     padding: 1rem 1.2rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 13px;
-    color: black;
+    /* color: black; */
     width: 9rem;
     white-space: nowrap;
 }
 
-.file-size{
+.select-conversion-container{
+
+    display: flex;
+    align-items: center;
+    position: relative;
+   
+    /* justify-content: space-between; */
+    width: 100px;
+    height: 40px;
+    
+}
+.select-conversion-container span{
+    color: red;
+    margin-right: 10px;
+}
+.conversion{
+    height: 30px;
+    width: 50px;
+}
+
+.conversion button{
+    /* width: 10px; */
+    height: 30px;
+    width: 60px;
+    border: 1px solid rgb(119, 115, 115);
+    border-radius: 4px;
+    padding: 0 2px;
+    
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    cursor: pointer;
+}
+
+.conversion button:hover{
+    border: 1px solid rgb(12, 12, 12);
+}
+
+.enclose{
+    display: flex;
+    gap: 1px;
+    gap: 2px;
+    align-items: center;
+    padding-right: 2px;
+}
+
+.enclose span{
+    display: none;
+}
+
+.dot-read{
+    margin-left: 9px;
+    padding-right: 13px;
+    /* display: none; */
+}
+
+.conversion button .confirmed-selection span{
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
     color: black;
+    display: none;
+    
+}
+
+.file-size{
+    color: rgba(104, 102, 102, 0.6);
 }
 .file-size span{
     margin-left: 0.2rem;
@@ -378,37 +445,69 @@ input[type="file"] {
     border-radius: 0.3rem;
     
 }
+ 
+/* Try to get it done */
 
+.select-choice-container{
+    position: absolute;
+    width: 13rem;
+    margin-top: 12rem;
+    /* background: #f06ea9; */
 
-/* during conversion */
-.spining{
+    width: 50%;
+    /* height: 14rem; */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    /* position: absolute; */
+    margin: 0.5rem 18rem;
+    margin-bottom: 5rem;
+}
+.conversion-list-container{
+    margin-top: 2rem;
+    width:  40%;
+    background: #bdd5f8;
+    height: 15rem;
+    padding: 0.6rem;
+}
+
+.search-convertor{
+    border-bottom: 1px solid black;
+}
+
+.status{
     display: flex;
+    gap: 0;
     align-items: center;
     text-align: center;
+    justify-content: center;
+    
 }
-.spining i{
+.status .spining-ready{
+    font-size: 10px;
+    color: rgb(102, 102, 237);
+    padding: 0.5px 3px;
+    border: 1px solid rgb(102, 102, 237);
+    border-radius: 0.2rem;
+    /* display: none; */
+}
+
+.status .spining-finish{
+    font-size: 10px;
     color: green;
     display: none;
-  
-}
-.spining p{
-    font-size: 20px;
-    color: #f06ea9;
-}
-.reading{
-    color: red;
-}
-
-
-/* After Converting */
-.status{
-    color: green;
-    font-size: 11px;
-    padding: 1.5px;
+    padding: 0.5px 3px;
     border: 1px solid green;
-    border-radius: 0.1rem;
+    border-radius: 0.2rem;
+    
+ 
 }
 
+.status i{
+    color: #f06ea9;
+    display: none;
+}
 
 .download-link a{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -417,5 +516,5 @@ input[type="file"] {
     font-size: 16px;
     border-radius: 0.1rem;
     padding: 2px 6px;
-    display: none;
+    /* display: none; */
 }

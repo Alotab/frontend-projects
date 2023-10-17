@@ -36,19 +36,33 @@ function handleFilesSelected(){
         const li = document.createElement('li');
         li.innerHTML =    `
                         <p>${f.name}</p>
-                        <div class="scroll-pick">
-                            <div class="spining">
-                                <!-- <p class="reading">Reading</p> -->
-                                <i class="ri-refresh-line"></i>
+                        <div class="select-conversion-container">
+                            <span>to</span>
+                            <div class="conversion">
+                                <button class="select-convertor">
+                                    <div class="enclose">
+                                        <div class="dot-read">...</div>
+                                        <div class="confirmed-selection">
+                                            <!-- <span>PNG</span> -->
+                                        </div>
+                                        <i class="ri-arrow-down-s-line"></i>
+                                    </div>
+                                </button>
                             </div>
-                            <!-- <div class="status">Finished</div> -->
                         </div>
-                        <div class="file-size">${f.size}<span>kb</span></div>
+
+                        <div class="status">
+                            <span class="spining-ready">Ready</span>
+                            <span class="spining-finish">Finished</span>
+                            <i class="ri-refresh-line"></i>
+                        </div>
+                    
+                        <div class="file-size">${f.size}<span>KB</span></div>
+                        <div class="download-link">
+                            <a href="">Download</a>
+                        </div>
                         <div class="close-button">
                             <i class="ri-close-line"></i>
-                            <div class="download-link">
-                                <a href="">download</a>
-                                </div>
                         </div>
                         `;
         selectedFiles.appendChild(li);
@@ -83,7 +97,7 @@ function convertFiles(){
 }
 
 document.getElementById('file-input').addEventListener('change', handleFilesSelected, false);
-document.querySelector('.convert').addEventListener('click', convertFiles);
+// document.querySelector('.convert').addEventListener('click', convertFiles);
 
 
 // Convert PDF -> CSV
