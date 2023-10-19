@@ -34,36 +34,68 @@ function handleFilesSelected(){
         fileList.push(f);
         // console.log(fileList);
         const li = document.createElement('li');
-        li.innerHTML =    `
-                        <p>${f.name}</p>
-                        <div class="select-conversion-container">
-                            <span>to</span>
-                            <div class="conversion">
-                                <button class="select-convertor">
-                                    <div class="enclose">
-                                        <div class="dot-read">...</div>
-                                        <div class="confirmed-selection">
-                                            <!-- <span>PNG</span> -->
-                                        </div>
-                                        <i class="ri-arrow-down-s-line"></i>
+        li.classList.add('file-list');
+        li.innerHTML = `
+        <p>albertsssssssssss.jpb</p>
+        <div class="select-conversion-container">
+            <span>to</span>
+            <div class="conversion">
+                <button class="select-convertor">
+                    
+                    <div class="enclose">
+                        <div class="dropdown-menu select-choice-container select-format show">
+                            <div class="format-search">
+                                <input class="form-search" type="text" placeholder="Search">
+                                <i class="ri-search-line search-icon"></i>
+                                <i class="ri-close-fill search-reset"></i>
+                            </div> 
+                    
+                            <div class="wrapper">
+                                <ul class="types">
+                                    <li class="current">Image</li>
+                                    <li class="current">Document</li>
+                                    <li class="current">Ebook</li>
+                                    <li class="current">Font</li>
+                                    <li class="current">Vector</li>
+                                </ul>
+                                <div class="formats">
+                                    <div class="format-inner">
+                                        <ul id="format-list">
+                                            <li class="current format-btn btn-secondary"><span>PNG</span></li>
+                                            <li class="current format-btn btn-secondary"><span>GIF</span></li>
+                                            <li class="current format-btn btn-secondary"><span>BEEP</span></li>
+                                            <li class="current format-btns btn-secondarys"><span>JPG</span></li>
+                                            
+                                            <li class="current format-btns btn-secondarys"><span>JPEG</span></li>
+                                        </ul>
                                     </div>
-                                </button>
+                                </div>
                             </div>
                         </div>
+                        
+                        <!-- <div class="confirmed-selection"> -->
+                            <!-- <span>JPEG</span> -->
+                        <!-- </div> -->
+                        <!-- <i class="ri-arrow-down-s-line"></i> -->
+                    </div>
+                </button>
+            </div>
+        </div>
 
-                        <div class="status">
-                            <span class="spining-ready">Ready</span>
-                            <span class="spining-finish">Finished</span>
-                            <i class="ri-refresh-line"></i>
-                        </div>
-                    
-                        <div class="file-size">${f.size}<span>KB</span></div>
-                        <div class="download-link">
-                            <a href="">Download</a>
-                        </div>
-                        <div class="close-button">
-                            <i class="ri-close-line"></i>
-                        </div>
+        <div class="status">
+            <span class="spining-ready">Ready</span>
+            <span class="spining-finish">Finished</span>
+            <i class="ri-refresh-line"></i>
+        </div>
+
+        <div class="file-size">23.98<span>KB</span></div>
+        <div class="download-link">
+            <a href="">Download</a>
+        </div>
+        <div class="close-button">
+            <i class="ri-close-line"></i>
+        </div>
+        
                         `;
         selectedFiles.appendChild(li);
 
@@ -126,5 +158,44 @@ function downloadCSVFile(csvFile) {
 }
 
 
-  
-  
+
+//====== activate the dropdown-meu for format selection =======//
+const dropDownListEl = document.querySelector(".conversion button");
+const activateDropDown = document.querySelector(".dropdown-menu")
+
+if(dropDownListEl){
+    dropDownListEl.addEventListener("click", (e) => {
+        console.log('hi')
+        activateDropDown.classList.add('activate-dropdown');
+        e.stopPropagation()
+    
+        document.addEventListener('click', (e) => {
+    
+            if(!dropDownListEl.contains(e.target)){
+                activateDropDown.classList.remove('activate-dropdown');
+            }
+            
+        })
+    })
+}
+
+
+
+//========= Get type of format from user click ========//
+
+const list = document.getElementById('format-list');
+const testInput = document.querySelector('.confirmed-selection span');
+
+if(list){
+    list.querySelectorAll('li').forEach( listItem => {
+        listItem.addEventListener('click', () => {
+            const label = listItem.querySelector('span').textContent;
+            testInput.textContent = label
+            // console.log(label)
+        })
+    
+       
+    })
+}
+
+

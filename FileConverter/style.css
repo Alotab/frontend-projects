@@ -233,8 +233,6 @@ input[type="file"] {
     margin-left: 1rem;
     color: #150606;
 }
-
-
 .result-container{
     height: 3rem;
     /* background-color: rgb(143, 138, 138); */
@@ -251,21 +249,17 @@ input[type="file"] {
     margin: 1rem 15rem;
     /* display: none; */
 }
-
-
 .file, .convert-result-download{
     color: aliceblue;
     font-size: 15px;
     padding: 1rem 2rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 .file{
     display: flex;
     justify-content: space-between;
     gap: 0.5rem;
 }
-
 .convert-button{
     padding: 1rem 2rem;
     background-color: red;
@@ -284,7 +278,6 @@ input[type="file"] {
  
     /* display: none; */
 }
-
 .convert-button i{
     font-size: 18px;
     color: #fff;
@@ -297,7 +290,6 @@ input[type="file"] {
     top: 15px;
     
 }
-
 .convert-button button{
     border: none;
     background-color: transparent;
@@ -371,34 +363,71 @@ input[type="file"] {
     margin-right: 10px;
 }
 .conversion{
-    height: 30px;
-    width: 50px;
+    /* height: 30px; */
+    /* width: 50px; */
+    /* background-color: #0d1117 !important; */
+    
 }
+
 .conversion button{
     /* width: 10px; */
     height: 30px;
     width: 60px;
     border: 1px solid rgb(119, 115, 115);
     border-radius: 4px;
-    padding: 0 2px;
-    
+    padding: 1rem;
+    /* border: none; */
     background: none;
     display: flex;
     align-items: center;
-    gap: 0;
+    /* gap: 0; */
     cursor: pointer;
-}
-.conversion button:hover{
-    border: 1px solid rgb(12, 12, 12);
+    /* background-color: green; */
 }
 
+.conversion button:hover {
+    background-color: #0d1117;
+    color: #fff;
+}
+.select-convertor{
+    display: none;
+    padding: 5px;
+    /* color: black; */
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.select-convertor::before{
+    content: "...";
+    font-weight: bold;
+    font-size: 16px;
+    /* display: none; */
+    
+}
+
+.select-convertor::before:hover{
+    color: #fff;
+}
+.select-convertor::after{
+    content: "⌄";
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 2px;
+
+}
+
+
+
 .enclose{
+ 
+    /* background-color: red !important; */
+    border: 1px solid gray;
     display: flex;
     position: relative;
-    gap: 1px;
-    /* gap: 2px; */
+    /* gap: 1px; */
     align-items: center;
-    padding-right: 2px;
+    /* padding-right: 2px; */
 }
 
 .enclose span{
@@ -407,14 +436,17 @@ input[type="file"] {
 .dot-read{
     margin-left: 9px;
     padding-right: 13px;
-    /* display: none; */
+    display: none;
 }
 .conversion button .confirmed-selection span{
     font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
-    display: none;
-    
+    font-weight: 400;
+    line-height: 1.45;
+}
+.confirmed-selection span{
+    display: block;
 }
 .file-size{
     color: rgba(104, 102, 102, 0.6);
@@ -515,9 +547,15 @@ input[type="file"] {
     background-clip: padding-box;
     border: 0 solid rgba(40, 40, 40, .15);
     border-radius: 4px;
+    display: none
 
 
 }
+.activate-dropdown{
+    display: block;
+}
+
+
 
 .dropdown-menu {
     box-shadow: 0 5px 40px 4px rgba(0,0,0,.3);
