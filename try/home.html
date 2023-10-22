@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pop-up Div with List</title>
+	<style type="text/css">
+		#popup {
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #f1f1f1;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px #888888;
+		}
+	</style>
+</head>
+<body>
+	<button id="myButton" onclick="showPopup()">Click me!</button>
+
+	<div id="popup">
+		<p>Select an item:</p>
+		<select id="itemList" onchange="updateButton()" style="display:flex">
+			<option value="">--Select--</option>
+			<option value="jpg">JPG</option>
+			<option value="jpeg">JPEG</option>
+			<option value="gif">GIF</option>
+			<option value="pdf">PDF</option>
+		</select>
+	</div>
+
+	<script type="text/javascript">
+		var button = document.getElementById("myButton");
+		var popup = document.getElementById("popup");
+		var itemList = document.getElementById("itemList");
+
+		function showPopup() {
+			popup.style.display = "block";
+		}
+
+		function updateButton() {
+			button.innerHTML = "Selected item: " + itemList.value.toUpperCase();
+			popup.style.display = "none";
+			itemList.value = "";
+		}
+    </script>
+</body>
+</html>
