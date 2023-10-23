@@ -352,12 +352,10 @@ input[type="file"] {
 }
 
 .select-conversion-container{
-
+    background: red;
     display: flex;
     align-items: center;
     position: relative;
-   
-    /* justify-content: space-between; */
     width: 100px;
     height: 40px;
     
@@ -373,12 +371,7 @@ input[type="file"] {
     
 }
 
-#button{
-    /* display: none; */
-    border: none !important;
-    background: transparent;
-    outline: none !important;
-}
+
 .conversion{
     height: 30px;
     width: 60px;
@@ -389,54 +382,47 @@ input[type="file"] {
     display: flex;
     align-items: center;
     cursor: pointer;
+    /* display: none; */
 }
 
 .conversion:hover {
-    background-color: #0d1117;
-    color: #fff;
+    /* background-color: #0d1117; */
+    /* color: #fff; */
 }
 .select-convertor{
     /* display: none; */
-    padding: 5px;
+    /* padding: 5px; */
     font-size: 12px;
     font-weight: 400;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
-.select-convertor::before{
-    /* content: "..."; */
+/* .select-convertor::before{
+    content: "...";
     font-weight: bold;
     font-size: 16px;
     display: none;
-}
+} */
 
 /* .select-convertor::before:hover{
     color: #fff;
 } */
-.select-convertor::after{
-    /* content: "⌄"; */
+/* .select-convertor::after{
+    content: "⌄";
     font-weight: bold;
     font-size: 16px;
     margin-left: 2px;
 
-}
-.enclose{
-    /* background-color: red !important; */
-    border: 1px solid gray;
-    display: flex;
-    position: relative;
-    /* gap: 1px; */
-    align-items: center;
-    /* padding-right: 2px; */
-}
+} */
+
 
 .enclose span{
     display: none;
 }
 .dot-read{
-    margin-left: 9px;
+    /* margin-left: 9px;
     padding-right: 13px;
-    display: none;
+    display: none; */
 }
 .conversion button .confirmed-selection span{
     font-size: 15px;
@@ -516,6 +502,15 @@ input[type="file"] {
 
 
 /*========================== POP UP FORMAT SELECTION   ========================*/
+
+.enclose{
+    /* display: none; */
+
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
 .dropdown-menu{
     position: absolute;
     top: -10rem;

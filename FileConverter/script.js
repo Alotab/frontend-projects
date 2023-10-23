@@ -56,50 +56,35 @@ function handleFilesSelected(){
 // const formatList = document.getElementById('format-list');
 // const textInput = document.querySelector('.select-convertor');
 
-// if(formatList){
-//     formatList.querySelectorAll('li').forEach( listItem => {
-//         listItem.addEventListener('click', (e) => {
-//             const label = listItem.querySelector('span').textContent;
-//             textInput.textContent = label;
-//             e.preventDefault();
-        
-        
-//         });
-//     })
-// }
-
-
-const formatList = document.getElementById('format-list');
-const textInput = document.querySelector('.select-convertor');
-
+// let selectedLabel = false;
 // if(formatList){
 //     formatList.querySelectorAll('li').forEach( listItem => {
 //         listItem.addEventListener('click', (e) => {
 //             const label = listItem.querySelector('span').textContent;
 //             if(textInput.textContent !== label){
-//                 textInput.textContent = label;
-//             }else{
-//                 textInput.textContent = '';
+//               e.preventDefault();
+//               textInput.textContent = label;
+//               selectedLabel = true;
 //             }
 //         });
 //     })
 // }
 
+//========= Display type of format user selected ========//
+const formatList = document.getElementById('format-list');
+const textInput = document.querySelector('.select-convertor');
 
-//====== activate the pop up format-menu for format selection =======//
-// const popUpFormat = document.querySelector(".conversion button");
-// const activateDropDown = document.querySelector(".dropdown-menu")
-
-// if(popUpFormat){
-//     popUpFormat.addEventListener("click", (e) => {
-//         console.log('hi');
-//         if(activateDropDown){
-//             activateDropDown.classList.add('activate-dropdown');
-//         }
-
-//     })
+// Display the selected format on the screen
+// if (formatList) {
+//   formatList.querySelectorAll('li').forEach(listItem => {
+//     listItem.addEventListener('click', (e) => {
+//       const label = listItem.querySelector('span').textContent;
+//       textInput.textContent = label;
+//     });
+//   });
 // }
 
+//====== activate the pop up format-menu for format selection =======//
 
 const popUpFormat = document.querySelector(".conversion");
 const activateDropDown = document.querySelector(".dropdown-menu");
@@ -121,52 +106,61 @@ if (popUpFormat) {
     // activateDropDown.classList.remove("activate-dropdown");
 
   });
-
-
 }
 
-// const selectPop = document.querySelector("button .select-convertor");
-// popUpFormat.addEventListener('click', (e) => {
-//     console.log(selectPop);
-//     console.log(selectPop.style.display);
-//     if(e.target == document.querySelector(".select-convertor") && document.querySelector(".select-convertor").style .display === 'none'){
-//         console.log('hi')
-//     }
-    
-// })
-
-// popUpFormat.addEventListener('click', (e) => {
-//     if(activateDropDown.style.display=='' && e.target == document.querySelector(".conversion button")){
-//         activateDropDown.style.display='block'
-//     } else {
-//         activateDropDown.style.display=''
-//     }
-// })
+//====== activate the pop up format-menu for format selection =======//
+// Display the list of format
+// const convEls = document.querySelector('.conversion');
+// const activatePopup =  document.querySelector('.dropdown-menu');
+// const mainstr = document.querySelector('body');
 
 
-// LETS TRY ANOTHER AGAIN
+// document.addEventListener('click', (e) => {
+//   if (e.target === convEls) {
+//     activatePopup.classList.add('activate-dropdown');
+//   } else {
+//     activatePopup.classList.remove('activate-dropdown');
+//   }
+// });
 
 
+
+
+
+
+
+
+
+//========= Display type of format user selected ========//
+
+// Display the selected format on the screen
+if (formatList) {
+  formatList.querySelectorAll('li').forEach(listItem => {
+    listItem.addEventListener('click', (e) => {
+      const label = listItem.querySelector('span').textContent;
+      textInput.textContent = label;
+    });
+  });
+}
+
+//====== activate the pop up format-menu for format selection =======//
+// Display the list of format
 const convEls = document.querySelector('.conversion');
 const activatePopup =  document.querySelector('.dropdown-menu');
 const mainstr = document.querySelector('body');
 
-convEls.addEventListener('click', (e) => {
-   
-  
-
-})
-
-let popFomat = false; 
-document.addEventListener('click' , (e) => {
-    if(e.target === convEls){
-        console.log('ahh');
-        activatePopup.classList.add("activate-dropdown");
-    } else {
-        // popFomat = true;
-        activateDropDown.classList.remove("activate-dropdown");
+document.addEventListener('click', (e) => {
+  if (e.target === convEls) {
+    // Check if the popup is already visible
+    if (!activatePopup.classList.contains('activate-dropdown')) {
+      // Add the activate-dropdown class to the popup
+      activatePopup.classList.add('activate-dropdown');
     }
-})
+  } else {
+    // Remove the activate-dropdown class from the popup
+    activatePopup.classList.remove('activate-dropdown');
+  }
+});
 
 
 

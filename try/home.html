@@ -1,49 +1,146 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pop-up Div with List</title>
-	<style type="text/css">
-		#popup {
-			display: none;
+	<title>Pop-up Div with List of Flex Items</title>
+	<style>
+		/* Style for the button */
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			border: none;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+
+		/* Style for the pop-up div */
+		.popup {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			background-color: #f1f1f1;
-			padding: 20px;
 			border-radius: 5px;
-			box-shadow: 0px 0px 10px #888888;
+			padding: 20px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+			display: none;
 		}
-	</style>
+
+		/* Style for the list of flex items */
+		.popup ul {
+			list-style-type: none;
+			padding-left: 0;
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		/* Style for each list item */
+		.popup li {
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			padding: 10px;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			cursor: pointer;
+		}
+
+		/* Style for the selected list item */
+		.popup li.selected {
+			background-color: #4CAF50;
+			color: white;
+		}
+		
+        /* Style for the span that shows the clicked item */
+        .popup span {
+            display:none; /* Hide the span initially */
+            margin-top:20px; /* Add some margin to separate it from the list */
+        }
+        
+        /* Style for the button that changes the selected item */
+        .popup button {
+            background-color:#4CAF50; 
+            color:white; 
+            border:none; 
+            padding:10px; 
+            border-radius:5px; 
+            cursor:pointer; 
+            margin-top:20px; /* Add some margin to separate it from the span */
+        }
+        
+        /* Style for the selected item in the span */
+        .popup span strong {
+            color:#4CAF50; /* Use the same color as the selected item */
+        }
+        
+        /* Show the span when a list item is clicked */
+        .popup li.selected + span {
+            display:inline-block; /* Show the span when a list item is clicked and selected */
+        }
+        
+        /* Change the selected item when the button is clicked */
+        .popup button {
+            margin-left:10px; /* Add some margin to separate it from the list and span */
+        }
+        
+        /* Change the selected item when the button is clicked */
+        .popup button:hover {
+            background-color:#3e8e41; /* Change color on hover */
+        }
+        
+        /* Change the selected item when the button is clicked */
+        .popup button:focus {
+            outline:none; /* Remove focus outline on click */
+        }
+        
+    </style>
 </head>
 <body>
-	<button id="myButton" onclick="showPopup()">Click me!</button>
 
-	<div id="popup">
-		<p>Select an item:</p>
-		<select id="itemList" onchange="updateButton()" style="display:flex">
-			<option value="">--Select--</option>
-			<option value="jpg">JPG</option>
-			<option value="jpeg">JPEG</option>
-			<option value="gif">GIF</option>
-			<option value="pdf">PDF</option>
-		</select>
-	</div>
+<button id="myBtn">Click me</button>
 
-	<script type="text/javascript">
-		var button = document.getElementById("myButton");
-		var popup = document.getElementById("popup");
-		var itemList = document.getElementById("itemList");
+<div class="popup" id="myPopup">
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <span>Clicked item is shown here:</span>
+    <button id="changeBtn">Change item</button>
+</div>
 
-		function showPopup() {
-			popup.style.display = "block";
-		}
+<script>
+    // Get the button that opens the pop-up div
+    var btn = document.getElementById("myBtn");
 
-		function updateButton() {
-			button.innerHTML = "Selected item: " + itemList.value.toUpperCase();
-			popup.style.display = "none";
-			itemList.value = "";
-		}
-    </script>
-</body>
-</html>
+    // Get the pop-up div
+    var popup = document.getElementById("myPopup");
+
+    // Get the list of flex items
+    var list = popup.getElementsByTagName("ul")[0];
+
+    // Get all list items
+    var items = list.getElementsByTagName("li");
+
+    // Get the span that shows the clicked item
+    var span = popup.getElementsByTagName("span")[0];
+
+    // Get the button that changes the selected item
+    var changeBtn = popup.getElementsByTagName("button")[0];
+
+    // Loop through all list items and add a click event listener to each one
+    for (var i = 0; i < items.length; i++) {
+      items[i].addEventListener("click", function() {
+          // Remove "selected" class from all items
+          for (var j = 0; j < items.length; j++) {
+              items[j].classList.remove("selected");
+          }
+          // Add "selected" class to clicked item
+          this.classList.add("selected");
+          // Show clicked item in span
+          span.innerHTML = "Clicked item is shown";
+      });
+    }
+
+    // Add click event listener to change button
