@@ -70,19 +70,7 @@ function handleFilesSelected(){
 //     })
 // }
 
-//========= Display type of format user selected ========//
-const formatList = document.getElementById('format-list');
-const textInput = document.querySelector('.select-convertor');
 
-// Display the selected format on the screen
-// if (formatList) {
-//   formatList.querySelectorAll('li').forEach(listItem => {
-//     listItem.addEventListener('click', (e) => {
-//       const label = listItem.querySelector('span').textContent;
-//       textInput.textContent = label;
-//     });
-//   });
-// }
 
 //====== activate the pop up format-menu for format selection =======//
 
@@ -126,41 +114,58 @@ if (popUpFormat) {
 
 
 
+/// Try again and again
 
 
 
 
+const buttonClick = document.querySelector('.btn-button');
+const activateDrop = document.querySelector('.dropdown-menu');
 
-//========= Display type of format user selected ========//
+const formatItems = document.getElementById('format-list');
+const textInput = document.querySelector('.select-convertor');
 
-// Display the selected format on the screen
-if (formatList) {
-  formatList.querySelectorAll('li').forEach(listItem => {
-    listItem.addEventListener('click', (e) => {
-      const label = listItem.querySelector('span').textContent;
-      textInput.textContent = label;
+
+buttonClick.addEventListener('click', () => {
+  activateDrop.classList.add('activate');
+})
+
+if(formatItems){
+  formatItems.querySelectorAll('li span').forEach(format => {
+    // console.log(format.textContent);
+    format.addEventListener('click', () => {
+      activateDrop.classList.remove('activate');
+
+      buttonClick.textContent = format.textContent;
+
     });
   });
 }
 
-//====== activate the pop up format-menu for format selection =======//
-// Display the list of format
-const convEls = document.querySelector('.conversion');
-const activatePopup =  document.querySelector('.dropdown-menu');
-const mainstr = document.querySelector('body');
 
-document.addEventListener('click', (e) => {
-  if (e.target === convEls) {
-    // Check if the popup is already visible
-    if (!activatePopup.classList.contains('activate-dropdown')) {
-      // Add the activate-dropdown class to the popup
-      activatePopup.classList.add('activate-dropdown');
-    }
-  } else {
-    // Remove the activate-dropdown class from the popup
-    activatePopup.classList.remove('activate-dropdown');
-  }
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

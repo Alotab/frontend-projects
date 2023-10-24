@@ -352,7 +352,7 @@ input[type="file"] {
 }
 
 .select-conversion-container{
-    background: red;
+    /* background: red; */
     display: flex;
     align-items: center;
     position: relative;
@@ -373,7 +373,11 @@ input[type="file"] {
 
 
 .conversion{
-    height: 30px;
+    position: static;
+  
+    /* display: none; */
+
+    /* height: 30px;
     width: 60px;
     border: 1px solid rgb(119, 115, 115);
     border-radius: 4px;
@@ -381,8 +385,7 @@ input[type="file"] {
     background: none;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    /* display: none; */
+    cursor: pointer; */
 }
 
 .conversion:hover {
@@ -392,9 +395,9 @@ input[type="file"] {
 .select-convertor{
     /* display: none; */
     /* padding: 5px; */
-    font-size: 12px;
+    /* font-size: 12px;
     font-weight: 400;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 
 }
 /* .select-convertor::before{
@@ -414,6 +417,82 @@ input[type="file"] {
     margin-left: 2px;
 
 } */
+
+
+.btn-button {
+    width: auto;
+    min-width: 75px !important;
+    /* padding-left: 11px; */
+    text-align: center !important;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+
+    line-height: 17px;
+    
+    /* padding: 7px 13px 8px; */
+    /* padding: 17px 13px 8px; */
+    padding: 8px;
+
+    color: #333;
+    border-color: #aeaeae;
+    background-color: transparent;
+
+    position: relative;
+    /* padding-right: 28px !important; */
+
+
+    letter-spacing: -.2px;
+
+    text-transform: uppercase !important;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    font-size: .875rem;
+    line-height: 1.6;
+    border-radius: 4px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+button, input {
+    overflow: visible;
+}
+
+.btn-caret {
+    position: relative;
+    /* padding-right: 28px !important; */
+}
+.btn-sm {
+    /* padding: 5px 20px 6px; */
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.btn-outline-dark{
+    color: #333;
+    border-color: #aeaeae;
+    background-color: #0000;
+}
+
+
+button {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
 
 
 .enclose span{
@@ -531,7 +610,7 @@ input[type="file"] {
     border-radius: 4px;
     display: none
 }
-.activate-dropdown{
+.activate{
     display: block;
 }
 .dropdown-menu {
