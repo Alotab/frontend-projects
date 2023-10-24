@@ -124,6 +124,7 @@ const activateDrop = document.querySelector('.dropdown-menu');
 
 const formatItems = document.getElementById('format-list');
 const textInput = document.querySelector('.select-convertor');
+const beforeElement = document.querySelector('.btn-button::before');
 
 
 buttonClick.addEventListener('click', () => {
@@ -137,6 +138,12 @@ if(formatItems){
       activateDrop.classList.remove('activate');
 
       buttonClick.textContent = format.textContent;
+      const element = document.querySelector('.btn-button').style;
+      // const style = window.getComputedStyle(element, '::before');
+      // element.style.setProperty('--display', 'none');
+      element.setProperty('--display', 'none');
+
+      
 
     });
   });

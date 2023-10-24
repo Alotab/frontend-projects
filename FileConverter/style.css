@@ -492,6 +492,16 @@ button {
     line-height: inherit;
 }
 
+.btn-button::before {
+    content: "...";
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+.hidden {
+    display: none;
+}
 
 
 
