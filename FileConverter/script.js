@@ -138,11 +138,10 @@ if(formatItems){
       activateDrop.classList.remove('activate');
 
       buttonClick.textContent = format.textContent;
-      const element = document.querySelector('.btn-button').style;
-      // const style = window.getComputedStyle(element, '::before');
-      // element.style.setProperty('--display', 'none');
-      element.setProperty('--display', 'none');
-
+      
+      const root = document.querySelector(":root");
+      root.style.setProperty("--display", 'none');
+    
       
 
     });
