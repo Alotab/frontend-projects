@@ -10,6 +10,7 @@
 }
 body{
     /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; */
+    font-family: Open Sans,Arial,sans-serif;
     font-size: var(--body-font-size, 14px);
     line-height: 1.5;
     background: #e3e3e4;
@@ -326,21 +327,17 @@ input[type="file"] {
    flex-direction: column-reverse;
 }
 .addfiles-Todo ul li.file-list{
-    
     width: 100%;
     list-style: none;
     text-decoration: none;
     background-color: rgb(255, 255, 255);
-    /* background-color: blue; */
     margin-bottom: 9px;
     
-    padding: 0.3rem 1rem;
+    /* padding: 0.3rem 1rem; */
     
     align-items: center;
-    /* color: #0d1117; */
     border-radius: 0.3rem;
     margin-left: 4rem;
-
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -354,6 +351,33 @@ input[type="file"] {
     /* color: black; */
     width: 9rem;
     white-space: nowrap;
+}
+
+.file-name-wrapper {
+    display: flex;
+    position: relative;
+ 
+    max-width: 83.3333333333%;
+    min-height: 34px;
+    padding-left: 25px;
+    /* background: blue !important; */
+}
+
+.file-name-icon{
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    /* left: 1px; */
+    left: 8px;
+    font-weight: 400;
+    width: 28px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 24px 24px;
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 4px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a067e6' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7,8.5C7,7.119,8.119,6,9.5,6S12,7.119,12,8.5S10.881,11,9.5,11S7,9.881,7,8.5z M14.5,11l-4,6l-2-3L5,19h15L14.5,11z'/%3E%3C/svg%3E");
 }
 
 .select-conversion-container{
