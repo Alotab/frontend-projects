@@ -88,11 +88,7 @@ nav, .link{
     padding: 0.2rem 1.4rem;
     margin-left: 1.5rem;
 }
-.convertor-wrapper{
-    /* padding: 0 8rem; */
-    /* margin: 0 8rem; */
-    /* margin: 0.5rem 1rem; */
-}
+
 .conveter-container{
     width: 50%;
     background-color: rgb(46, 44, 44);
@@ -105,7 +101,6 @@ nav, .link{
     margin: 0.5rem 18rem;
     margin-bottom: 5rem;
 }
-
 .upload-box{
     padding: 1rem 2.5rem;
     display: flex;
@@ -121,7 +116,6 @@ nav, .link{
 .upload-box:hover{
     /* background-color: rgb(245, 91, 91); */
 }
-
 .select-file{
     display: flex;
     justify-content: center;
@@ -146,15 +140,9 @@ nav, .link{
 
 input[type="file"] {
     color: transparent;
-    /* display: none; */
     height: 100%;
-    /* width: 100%; */
-    /* background-color: blue; */
-
-
     opacity: 0;
     position: fixed;
-   
 }
  
 .select-file form{
@@ -169,19 +157,12 @@ input[type="file"] {
     font-size: 1.2rem;
     color: #fff;
     margin-left: 1.3rem;
-
-
-    /* display: none; */
 }
-
 .upload-box p{
     font-size: 1.3rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #fff;
     white-space: nowrap;
-
-
-    /* display: none; */
 }
 .drop-down{
     position: relative;
@@ -193,7 +174,6 @@ input[type="file"] {
     border-radius: 0 0.2rem 0.2rem 0;
     cursor: pointer;
 }
-
 .drop-down-active{
     display: block;
 }
@@ -224,8 +204,6 @@ input[type="file"] {
     background: transparent;
     cursor: pointer;
     padding: 1.2rem 1rem;
-   
-
 }
 .drop-down-list button:hover{
     background-color: rgb(173, 167, 167);
@@ -278,11 +256,6 @@ input[type="file"] {
     position: relative;
     cursor: pointer;
     margin-left: 4rem;
-
-    /* display: flex; */
-    /* position: absolute; */
- 
-    /* display: none; */
 }
 .convert-button i{
     font-size: 18px;
