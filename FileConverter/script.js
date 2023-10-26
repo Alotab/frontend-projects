@@ -26,149 +26,122 @@ dropEl.addEventListener('click', () => {
 
 
 const fileIn = document.getElementById('file-input');
-const selectedFiles = document.getElementById('files-list')
+const selectedFiles = document.getElementById('files-list');
 
 let fileList = [];
 
 function handleFilesSelected(){
     const selectFiles = [...fileIn.files];
     for (const f of selectFiles){
-        fileList.push(f);
+        // fileList.push(f);
         // console.log(fileList);
-        // const li = document.createElement('li');
-        // li.classList.add('file-list');
-        // li.innerHTML = `
-        
-        //                 `;
-        // selectedFiles.appendChild(li);
+        const li = document.createElement('li');
+        li.classList.add('file-list');
 
-        // Delete any of the Uploaded files
+        const insert = formatSizeUnits(f.size);
+        li.innerHTML = `
+                          <div class="file-name-wrapper">
+                              <span class="file-name-icon"></span>
+                              <p>${f.name}</p>
+                          </div>
+                        
+                          <div class="select-conversion-container">
+                              <span>to</span>
+                              <div class="conversion">
+                                  <button class="btn-button btn-caret btn btn-sm btn-outline-dark"> <i></i></button>
+                                  <!-- <div class="select-convertor"> -->
+                                      
+                                      <!-- <div class="enclose"> -->
+                                  <div class="dropdown-menu select-choice-container select-format show">
+                                  <!-- <div class="dropdown-menu"> -->
+                                      <div class="format-search">
+                                          <input class="form-search" type="text" placeholder="Search">
+                                          <i class="ri-search-line search-icon"></i>
+                                          <i class="ri-close-fill search-reset"></i>
+                                      </div> 
+                              
+                                      <div class="wrapper">
+                                          <ul class="types">
+                                              <li class="current">Image</li>
+                                              <li class="current">Document</li>
+                                              <li class="current">Ebook</li>
+                                              <li class="current">Font</li>
+                                              <li class="current">Vector</li>
+                                          </ul>
+                                          <div class="formats">
+                                              <div class="format-inner">
+                                                  <ul id="format-list">
+                                                      <li class="current format-btn btn-secondary"><span>PNG</span></li>
+                                                      <li class="current format-btn btn-secondary"><span>GIF</span></li>
+                                                      <li class="current format-btn btn-secondary"><span>BEEP</span></li>
+                                                      <li class="current format-btns btn-secondarys"><span>JPG</span></li>
+                                                      
+                                                      <li class="current format-btns btn-secondarys"><span>JPEG</span></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                      <!-- </div> -->
+                                  <!-- </div> -->
+                              </div>
+                          </div>
+
+                          <div class="status">
+                              <span class="spining-ready">Ready</span>
+                              <span class="spining-finish">Finished</span>
+                              <i class="ri-refresh-line"></i>
+                          </div>
+
+                          <div class="file-size">${insert}</div>
+                          <div class="download-link">
+                              <a href="">Download</a>
+                          </div>
+                          <div class="close-button">
+                              <i class="ri-close-line"></i>
+                          </div>
+        
+                        `;
+        selectedFiles.appendChild(li);
+
+        //========= Delete any of the Uploaded files =========//
         const deleteButton = li.querySelector('.close-button');
         deleteButton.addEventListener('click', () => {
           li.remove();
         });
+
+
+
+        const buttonClick = li.querySelector('.btn-button');
+        const activateDrop = li.querySelector('.dropdown-menu');
+        const formatItems = li.querySelector('#format-list');
+
+        const mydisplay = () => {
+          return `none`;
+        };
+
+        //========= Popup Format type list when button is clicked  ========//
+        if(buttonClick){
+          buttonClick.addEventListener('click', () => {
+            activateDrop.classList.add('activate');
+          });
+        };
+
+       //========= Display type of format user selected ========//
+        if(formatItems){
+          formatItems.querySelectorAll('li span').forEach(format => {
+            format.addEventListener('click', () => {
+              activateDrop.classList.remove('activate');
+
+              buttonClick.textContent = format.textContent;
+
+              buttonClick.style.setProperty('--display', mydisplay());
+            });
+          });
+        };
+
     };
 }
-
-
-
-//========= Display type of format user selected ========//
-// const formatList = document.getElementById('format-list');
-// const textInput = document.querySelector('.select-convertor');
-
-// let selectedLabel = false;
-// if(formatList){
-//     formatList.querySelectorAll('li').forEach( listItem => {
-//         listItem.addEventListener('click', (e) => {
-//             const label = listItem.querySelector('span').textContent;
-//             if(textInput.textContent !== label){
-//               e.preventDefault();
-//               textInput.textContent = label;
-//               selectedLabel = true;
-//             }
-//         });
-//     })
-// }
-
-
-
-//====== activate the pop up format-menu for format selection =======//
-
-const popUpFormat = document.querySelector(".conversion");
-const activateDropDown = document.querySelector(".dropdown-menu");
-
-if (popUpFormat) {
-  popUpFormat.addEventListener("click", (e) => {
-    // console.log("hi");
-
-    // activateDropDown.classList.add("activate-dropdown");
-    
-  });
-
-  // Add an event listener to the activateDropDown element to remove the div when the user clicks outside of it.
-  activateDropDown.addEventListener("click", (e) => {
-    // Prevent the event from bubbling up to the parent element.
-    e.stopPropagation();
-
-    // Remove the activate-dropdown class from the div.
-    // activateDropDown.classList.remove("activate-dropdown");
-
-  });
-}
-
-//====== activate the pop up format-menu for format selection =======//
-// Display the list of format
-// const convEls = document.querySelector('.conversion');
-// const activatePopup =  document.querySelector('.dropdown-menu');
-// const mainstr = document.querySelector('body');
-
-
-// document.addEventListener('click', (e) => {
-//   if (e.target === convEls) {
-//     activatePopup.classList.add('activate-dropdown');
-//   } else {
-//     activatePopup.classList.remove('activate-dropdown');
-//   }
-// });
-
-
-
-
-/// Try again and again
-
-
-
-
-const buttonClick = document.querySelector('.btn-button');
-const activateDrop = document.querySelector('.dropdown-menu');
-
-const formatItems = document.getElementById('format-list');
-const textInput = document.querySelector('.select-convertor');
-const beforeElement = document.querySelector('.btn-button::before');
-
-
-buttonClick.addEventListener('click', () => {
-  activateDrop.classList.add('activate');
-})
-
-if(formatItems){
-  formatItems.querySelectorAll('li span').forEach(format => {
-    // console.log(format.textContent);
-    format.addEventListener('click', () => {
-      activateDrop.classList.remove('activate');
-
-      buttonClick.textContent = format.textContent;
-      
-      const root = document.querySelector(":root");
-      root.style.setProperty("--display", 'none');
-    
-      
-
-    });
-  });
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -222,3 +195,119 @@ function downloadCSVFile(csvFile) {
 
     link.click();
 }
+
+
+
+
+function formatSizeUnits(bytes) {
+  if (bytes >= 1073741824) {
+      bytes = (bytes / 1073741824).toFixed(2) + " GB";
+  } else if (bytes >= 1048576) {
+      bytes = (bytes / 1048576).toFixed(2) + " MB";
+  } else if (bytes >= 1024) {
+      bytes = (bytes / 1024).toFixed(2) + " KB";
+  } else if (bytes > 1) {
+      bytes = bytes + " bytes";
+  } else if (bytes == 1) {
+      bytes = bytes + " byte";
+  } else {
+      bytes = "0 bytes";
+  }
+  return bytes;
+}
+
+
+
+
+
+
+
+function checkFileSize(f){
+  const file = document.querySelector('#file-input').files[0];
+
+  const fileSizeInBytes = f.size
+  // const fileSizeInBytes = file.size;
+
+  const fileSizeInKBOrMB = fileSizeInBytes < 1024 ? fileSizeInBytes / 1024 : fileSizeInBytes / (1024 * 1024);
+
+  const roundedFileSizeInKBOrMB = Math.ceil(fileSizeInKBOrMB);
+  console.log("rounded ", roundedFileSizeInKBOrMB);
+
+  // const fileSizeElement = li.querySelector('.file-size');
+  const fileSizeElement = document.querySelector('.file-size');
+  const insertAllo = `${roundedFileSizeInKBOrMB} ${fileSizeInBytes < 1024 ? 'KB' : 'MB'}`
+
+  fileSizeElement.textContent = insertAllo;
+
+
+
+}
+
+
+
+
+
+/* <div class="file-size">${sizeInKb} KB</div>  */
+
+
+
+
+
+
+
+
+
+
+
+//========= Display type of format user selected ========//
+// const formatList = document.getElementById('format-list');
+// const textInput = document.querySelector('.select-convertor');
+
+// let selectedLabel = false;
+// if(formatList){
+//     formatList.querySelectorAll('li').forEach( listItem => {
+//         listItem.addEventListener('click', (e) => {
+//             const label = listItem.querySelector('span').textContent;
+//             if(textInput.textContent !== label){
+//               e.preventDefault();
+//               textInput.textContent = label;
+//               selectedLabel = true;
+//             }
+//         });
+//     })
+// }
+
+
+/// Try again and again
+// const buttonClick = document.querySelector('.btn-button');
+// const activateDrop = document.querySelector('.dropdown-menu');
+
+
+// const textInput = document.querySelector('.select-convertor');
+// const beforeElement = document.querySelector('.btn-button::before');
+
+// if(buttonClick){
+//   buttonClick.addEventListener('click', () => {
+//     activateDrop.classList.add('activate');
+//   });
+// }
+
+
+
+// const formatItems = document.getElementById('format-list');
+// const activateDrop = document.querySelector('.dropdown-menu');
+// const buttonClick = document.querySelector('.btn-button');
+// if(formatItems){
+//   formatItems.querySelectorAll('li span').forEach(format => {
+//     // console.log(format.textContent);
+//     format.addEventListener('click', () => {
+//       activateDrop.classList.remove('activate');
+
+//       buttonClick.textContent = format.textContent;
+      
+//       const root = document.querySelector(":root");
+//       root.style.setProperty("--display", 'none');
+
+//     });
+//   });
+// }
