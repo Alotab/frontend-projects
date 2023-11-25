@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRMBOAD</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="crm-nav">
+        <div class="nav-search">
+            <h2>DJANGO-CRM</h2>
+            <div class="nav-main-search">
+                <i class="ri-search-line"></i>
+                <input type="search" placeholder="Search...">
+                <div class="search-btn">Search</div>
+            </div>
+        </div>
+        <div class="nav-utils">
+            <div class="lang">
+                <p>English</p>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="profile">
+                <img src="images/Prince.JPG" alt="">
+                <div class="details">
+                    <span>Dominic Dawson</span>
+                    <p>Founder</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="crm-agent-container">
+        <div class="agent-business-info">
+            <img src="images/Prince.JPG" alt="">
+
+            <div class="agent-business-details">
+                <div class="agent-info">
+                    <p>Joslyne Culvert</p>
+                    <span>Authorised Brand Seller</span>
+                </div>
+                <div class="agent-revenue">
+                    <p>$30,990</p>
+                    <span>Total Revenue</span>
+                </div>
+                <div class="agent-orders">
+                    <p>8000</p>
+                    <span>Number of Orders</span>
+                </div>
+             
+            </div>
+        </div>
+
+        <div class="sales-business-info">
+            <div class="sales-business-details">
+                <p>$424,654</p>
+                <span>Sales</span>
+            </div>
+            <div class="sales-chart">
+                <canvas id="myChart" style="width:100%"></canvas>
+            </div>
+        </div>
+
+       
+        <div class="profit-business-info">
+            <div class="profits-business-details">
+                <p>$139,089</p>
+                <span>Profits</span>
+            </div>
+            <div class="profit-chart">
+                <canvas id="myCharts" style="width:100%;max-width:700px"></canvas>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--============ scrip ==================-->
+    <script src="script.js"></script>
+
+    <!-- <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script> -->
+</body>
+</html>
