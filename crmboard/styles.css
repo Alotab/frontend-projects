@@ -23,6 +23,12 @@ a{
     align-items: center;
     padding: 0px 0px 0px 20px;
 
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
 }
 .nav-search h2{
     color: rgb(245, 100, 192);
@@ -391,11 +397,15 @@ a{
 
 .leads-container {
     max-width: 1000px;
+    margin-top: 5rem;
     margin-left: auto;
     margin-right: auto;
     padding-left: 10px;
     padding-right: 10px;
 }
+
+
+
 
 
 h2 {
@@ -409,6 +419,17 @@ h2 {
 small {
     font-size: 0.3em;
 }
+.responsive-table{
+    overflow-y: auto;
+    max-height: 550px; /* Adjust this value based on your desired maximum height */
+}
+
+.responsive-table .table-header {
+    position: sticky;
+    top: 0; /* Position the header at the top of the table */
+    z-index: 1; /* Ensure the header stays visible over the scrolling content */
+  
+}
 
 li {
     border-radius: 3px;
@@ -419,31 +440,91 @@ li {
 }
 
 .table-row {
+    display: flex;
     background-color: #ffffff;
     /* background-color: #660e0e; */
     box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
 }
+
 .col-1 {
-    flex-basis: 6%;
+    flex-basis: 4%;
+    /* id */
 }
 .col-2 {
-    flex-basis: 35%;
+    flex-basis: 23%;
+    /* name  */
 }   
 .col-3 {
-    flex-basis: 10%;
+    flex-basis: 9%;
+    /* sex  */
 }
 .col-4 {
-    flex-basis: 20%;
+    flex-basis: 14%;
+    /* location  */
+}
+.col-5 {
+    flex-basis: 17%;
+    /* phone  */
+
+}
+.col-6 {
+    flex-basis: 21%;
+    /* email  */
+}
+.col-7 {
+    flex-basis: 8%;
+    /* update */
+}
+.col-8 {
+    flex-basis: 4%;
+    /* delete */
 }
 
-.col-5 {
-    flex-basis: 15%;
-    padding-left: 2rem;
-}
+
+
 
 .table-header {
     background-color: #95A5A6;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+ 
+
+
+    /* position: absolute; */
+    /* top: 0;
+    left: 0;
+    width: 100%; */
+}
+
+.lead-email{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.lead-update a{
+    background: rgb(2, 84, 2);
+    color: white;
+    font-size: 15px;
+    padding: 5px 7px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.5s;
+    
+}
+.lead-update a:hover{
+    background: rgb(6, 168, 6);
+}
+.lead-delete a{
+    background: rgb(234, 126, 126);
+    color: white;
+    font-size: 15px;
+    padding: 5px 7px;
+    border-radius: 2px;
+    cursor: pointer;
+   
+    transition: background 0.5s;
+}
+.lead-delete a:hover{
+    background: rgb(241, 44, 44);
 }
