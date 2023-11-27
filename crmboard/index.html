@@ -6,6 +6,8 @@
     <title>CRMBOAD</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -37,25 +39,28 @@
 
     <!--===================== crm-agent-container  ==============================-->
     <div class="crm-agent-container">
-        <div class="agent-business-info">
-            <img src="images/Prince.JPG" alt="">
-
-            <div class="agent-business-details">
-                <div class="agent-info">
-                    <p>Joslyne Culvert</p>
-                    <span>Authorised Brand Seller</span>
+        <a href="#">
+            <div class="agent-business-info">
+                <img src="images/Prince.JPG" alt="">
+    
+                <div class="agent-business-details">
+                    <div class="agent-info">
+                        <p>Joslyne Culvert</p>
+                        <span>Authorised Brand Seller</span>
+                    </div>
+                    <div class="agent-revenue">
+                        <p>$30,990</p>
+                        <span>Total Revenue</span>
+                    </div>
+                    <div class="agent-orders">
+                        <p>8000</p>
+                        <span>Number of Orders</span>
+                    </div>
+                 
                 </div>
-                <div class="agent-revenue">
-                    <p>$30,990</p>
-                    <span>Total Revenue</span>
-                </div>
-                <div class="agent-orders">
-                    <p>8000</p>
-                    <span>Number of Orders</span>
-                </div>
-             
             </div>
-        </div>
+        </a>
+   
 
         <div class="sales-business-info">
             <div class="sales-business-details">
@@ -83,20 +88,69 @@
 
     <!--=================== Growth Container  ======================-->
     <div class="agent-growth-container">
-        <div class="agent-growth">
+        <div class="agent-revenue-chart">
             <div class="ag-revenue">
                 <p>Revenue</p>
                 <span>$6,254</span>
             </div>
             <div class="ag-timeline">
                 <div class="ag-percentage">
-                    6.00%
+                    <!-- <i class="fa-solid fa-location-arrow"></i> -->
+                    <p>6.00%</p>
                 </div>
                 <span>Since last month</span>
             </div>
         </div>
 
+        <div class="agent-growth-chart">
+            <div class="ag-growth">
+                <p>Growth</p>
+                <span>+ 40.54%</span>
+            </div>
+            <div class="ag-timeline">
+                <div class="ag-percentage-growth">
+                    <!-- <i class="fa-solid fa-location-arrow"></i> -->
+                    <p>4.87%</p>
+                </div>
+                <span>Since last month</span>
+            </div>
+        </div>
+
+        <div class="agent-customer-chart">
+            <a href="#">
+                <div class="ag-customers">
+                    <p>CUSTOMERS</p>
+                    <span>50,143</span>
+                </div>
+                <div class="ag-timeline">
+                    <div class="ag-customer-percentage">
+                        <!-- <i class="fa-solid fa-location-arrow"></i> -->
+                        <p>6.00%</p>
+                    </div>
+                    <span>Since last month</span>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="agent-tottal-revenue-chart">
+            <a href="#">
+                <div class="ag-revenue-chart">
+                    <p>Revenue</p>
+                    <span>$10,245</span>
+                </div>
+                <div class="ag-timeline">
+                    <div class="ag-revenue-percentage">
+                        <!-- <i class="fa-solid fa-location-arrow"></i> -->
+                        <p>17.38%</p>
+                    </div>
+                    <span>Since last month</span>
+                </div>
+            </a>
+        </div>
     </div>
+
+    <!--==================== Leads Updates =====================-->
  
 
 
