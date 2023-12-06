@@ -112,19 +112,80 @@ function handleFilesSelected(){
 
 
 
-        const buttonClick = li.querySelector('.btn-button');
+        const buttonClick = li.querySelectorAll('.btn-button');
         const activateDrop = li.querySelector('.dropdown-menu');
         const formatItems = li.querySelector('#format-list');
 
-        const mydisplay = () => {
-          return `none`;
-        };
 
         //========= Popup Format type list when button is clicked  ========//
         if(buttonClick){
-          buttonClick.addEventListener('click', () => {
-            activateDrop.classList.add('activate');
+          buttonClick.forEach(button => {
+            button.addEventListener('click', () => {
+           
+              if(activateDrop.classList.contains('activate')){
+                console.log('hii');
+                activateDrop.style.display = "none";
+           
+              }
+              activateDrop.style.display = "block";
+            });
           });
+        };
+
+        // Get all of the popup message elements.
+        const popupMessages = document.querySelectorAll('.dropdown-menu');
+
+        // Add an event listener to each button.
+        buttonClick.forEach(button => {
+          button.addEventListener('click', () => {
+            // Hide all of the popup message elements.
+            popupMessages.forEach(popupMessage => {
+              popupMessage.classList.remove('show');
+            });
+
+            // Show the popup message element for the current button.
+            const currentPopupMessage = popupMessage.querySelector('.dropdown-menu');
+            currentPopupMessage.classList.add('show');
+          });
+        });
+
+
+
+
+
+
+
+
+        var currentDay = null;
+        // if(buttonClick){
+        //     buttonClick.addEventListener('click', function(e){
+        //         e.stopPropagation();
+        //         // if(currentDay && currentDay !== activateDrop){
+        //         //     // activateDrop.style.display = "none";
+                   
+        //         // }
+        //         if(currentDay){
+        //           console.log('true');
+        //         };
+
+        //         if(activateDrop.style.display === "none") {
+        //             activateDrop.style.display = "block";
+        //             // currentDay = activateDrop;
+        //         } else {
+        //             activateDrop.style.display = "none";
+        //             currentDay = null;
+        //         }
+        //     });
+        // };
+
+        // document.addEventListener('click', function(){
+        //     activateDrop.style.display = "none"; 
+        // });
+
+
+        
+        const mydisplay = () => {
+          return `none`;
         };
 
        //========= Display type of format user selected ========//
@@ -135,7 +196,7 @@ function handleFilesSelected(){
 
               buttonClick.textContent = format.textContent;
 
-              buttonClick.style.setProperty('--display', mydisplay());
+              // buttonClick.style.setProperty('--display', mydisplay());
             });
           });
         };
@@ -245,11 +306,22 @@ function checkFileSize(f){
 
 
 
+function trypopUp() {
+  if(buttonClick){
+    buttonClick.forEach(button => {
+      button.addEventListener('click', () => {
+        console.log('hii');
+        if(activateDrop.style.display === "block"){
+          activateDrop.style.display = "none";
+     
+        }
+        activateDrop.style.display === "block";
+      });
+    });
+  };
+}
 
-
-/* <div class="file-size">${sizeInKb} KB</div>  */
-
-
+// trypopUp();
 
 
 

@@ -41,11 +41,6 @@
         <div class="conveter-container">
             <div class="upload-box">
                 <div class="select-file">
-                    <!-- <label for="my-file-input">
-                        <i class="ri-file-add-fill"></i>
-                        <p>Select File</p>
-                        <input type="file" name="pc-upload"  id="my-file-input" enctype="multipart/form-data" multiple="multiple">
-                    </label> -->
                     <form id="file-form" action="#" method="post">
                         <i class="ri-file-add-fill"></i>
                         <p>Select File</p>
@@ -79,6 +74,13 @@
                 <!-- <i class="ri-recycle-line"></i> -->
                 <i class="ri-refresh-line"></i>
                 <button class="convert"><p>Convert</p></button>
+            </div>
+
+            <div class="file-info">
+                <p>Original filename: <span>filename</span> </p>
+                <p>Converted filename: <span>converted file</span></p>
+                <a href="{{ converted_file.original_download_url }}">Download-Original-File</a>
+                <a href="{{ converted_file.converted_download_url }}">Download-Converted-File</a>
             </div>
         </div>
     </div>

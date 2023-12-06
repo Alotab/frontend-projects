@@ -105,3 +105,20 @@ new Chart(ctxs, {
       }]
     },
 });
+
+
+
+
+// Button to appear and disappear the logout container
+const settingsEl = document.querySelector('.settings');
+const logoutDiv = document.querySelector('.settings-logout');
+
+settingsEl.addEventListener('click', (event) => {
+    // prevent this click from triggering the document click event
+    event.stopPropagation();
+    logoutDiv.classList.toggle('active');
+});
+
+document.addEventListener('click', () => {
+    logoutDiv.classList.remove('active');
+});

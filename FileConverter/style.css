@@ -768,3 +768,18 @@ input:active, input:focus{
     /* color: #fff; */
 }
 
+
+
+/* file donwload section  */
+
+.file-info {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: green;
+}
+.file-info p span{
+    color: #fff;
+}
+.file-info a{
+    color: #f06ea9;
+}
