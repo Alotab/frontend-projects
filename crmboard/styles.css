@@ -570,6 +570,32 @@ li {
     background: rgb(241, 44, 44);
 }
 
+/*=== upload csv input ===== */
+.utils-sections {
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+input[type="file"] {
+    color: green;
+    height: 100%;
+    border: none;
+}
+
+input[type="submit"] {
+    font-size: 15px;
+    padding: 3px 5px;
+    color: #fff;
+    background: green;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
 /* create lead  */
 .create-lead {
     margin-left: 5px;

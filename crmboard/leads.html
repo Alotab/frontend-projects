@@ -196,7 +196,19 @@
             </li>
 
         </ul>
-        <div class="create-lead"><a href="#">Create Lead</a></div>
+        <div class="utils-sections">
+            <div class="create-lead"><a href="#">Create Lead</a></div>
+
+            <form action="{% url 'leadcsv' %}" method="post" enctype="multipart/form-data">
+                <!-- <label for="csv_file">Select a CSV file:</label> -->
+                <div class="file-upload">
+                    <input type="file" id="csv_file" name="csv_file" accept=".csv" class="file-upload-input">
+                    <input type="submit" value="Upload">
+                </div>
+               
+            </form>
+        </div>
+        
     </div>
 
 
