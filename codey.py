@@ -1,19 +1,15 @@
 class Laptop:
     discount = 6
-    def __init__(self, name, price):
-        self.__name = name
+    def __init__(self, price):
         self.price = price
         
     def apply(self):
         discounted = (self.price /100)*self.discount
         amount = self.price - discounted
         return amount
-        
 
-        
-        
+
 class Machine(Laptop):
-    super
 
 boss = Laptop("Dell", 8000)
 
